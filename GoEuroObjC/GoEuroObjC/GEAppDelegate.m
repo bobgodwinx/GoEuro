@@ -6,13 +6,13 @@
 //  Copyright © 2015 Bob Godwin Obi. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "GEAppDelegate.h"
 
-@interface AppDelegate ()
+@interface GEAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation GEAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

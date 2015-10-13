@@ -8,14 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		C4CDC8B51BCD10770061C168 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDC8B41BCD10770061C168 /* main.m */; };
-		C4CDC8B81BCD10780061C168 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDC8B71BCD10780061C168 /* AppDelegate.m */; };
-		C4CDC8BB1BCD10780061C168 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDC8BA1BCD10780061C168 /* ViewController.m */; };
+		C4CDC8B81BCD10780061C168 /* GEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDC8B71BCD10780061C168 /* GEAppDelegate.m */; };
 		C4CDC8BE1BCD10780061C168 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4CDC8BC1BCD10780061C168 /* Main.storyboard */; };
-		C4CDC8C01BCD10780061C168 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4CDC8BF1BCD10780061C168 /* Assets.xcassets */; };
 		C4CDC8C31BCD10780061C168 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4CDC8C11BCD10780061C168 /* LaunchScreen.storyboard */; };
 		C4CDC8CE1BCD10780061C168 /* GoEuroObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDC8CD1BCD10780061C168 /* GoEuroObjCTests.m */; };
 		C4CDC8D91BCD10780061C168 /* GoEuroObjCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDC8D81BCD10780061C168 /* GoEuroObjCUITests.m */; };
 		C4CDC9231BCD2EC20061C168 /* Myriad Pro in Resources */ = {isa = PBXBuildFile; fileRef = C4CDC9221BCD2EC20061C168 /* Myriad Pro */; settings = {ASSET_TAGS = (); }; };
+		C4CDC9261BCD37130061C168 /* GESearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDC9251BCD37130061C168 /* GESearchViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C4CDC92F1BCD3F080061C168 /* GECommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDC92E1BCD3F080061C168 /* GECommunicator.m */; settings = {ASSET_TAGS = (); }; };
+		C4CDC9301BCD3F080061C168 /* GECommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDC92E1BCD3F080061C168 /* GECommunicator.m */; settings = {ASSET_TAGS = (); }; };
+		C4CDC9311BCD3F190061C168 /* GESearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDC9251BCD37130061C168 /* GESearchViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C4CDC9341BCD3F390061C168 /* GEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDC9331BCD3F390061C168 /* GEManager.m */; settings = {ASSET_TAGS = (); }; };
+		C4CDC9351BCD3F390061C168 /* GEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDC9331BCD3F390061C168 /* GEManager.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,12 +42,9 @@
 /* Begin PBXFileReference section */
 		C4CDC8B01BCD10770061C168 /* GoEuroObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoEuroObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CDC8B41BCD10770061C168 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C4CDC8B61BCD10780061C168 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		C4CDC8B71BCD10780061C168 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C4CDC8B91BCD10780061C168 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C4CDC8BA1BCD10780061C168 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C4CDC8B61BCD10780061C168 /* GEAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GEAppDelegate.h; sourceTree = "<group>"; };
+		C4CDC8B71BCD10780061C168 /* GEAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GEAppDelegate.m; sourceTree = "<group>"; };
 		C4CDC8BD1BCD10780061C168 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C4CDC8BF1BCD10780061C168 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4CDC8C21BCD10780061C168 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4CDC8C41BCD10780061C168 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4CDC8C91BCD10780061C168 /* GoEuroObjCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoEuroObjCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +54,12 @@
 		C4CDC8D81BCD10780061C168 /* GoEuroObjCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoEuroObjCUITests.m; sourceTree = "<group>"; };
 		C4CDC8DA1BCD10780061C168 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4CDC9221BCD2EC20061C168 /* Myriad Pro */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Myriad Pro"; sourceTree = "<group>"; };
+		C4CDC9241BCD37130061C168 /* GESearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GESearchViewController.h; sourceTree = "<group>"; };
+		C4CDC9251BCD37130061C168 /* GESearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GESearchViewController.m; sourceTree = "<group>"; };
+		C4CDC92D1BCD3F080061C168 /* GECommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GECommunicator.h; sourceTree = "<group>"; };
+		C4CDC92E1BCD3F080061C168 /* GECommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GECommunicator.m; sourceTree = "<group>"; };
+		C4CDC9321BCD3F390061C168 /* GEManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GEManager.h; sourceTree = "<group>"; };
+		C4CDC9331BCD3F390061C168 /* GEManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GEManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,14 +110,12 @@
 		C4CDC8B21BCD10770061C168 /* GoEuroObjC */ = {
 			isa = PBXGroup;
 			children = (
-				C4CDC8B61BCD10780061C168 /* AppDelegate.h */,
-				C4CDC8B71BCD10780061C168 /* AppDelegate.m */,
-				C4CDC8B91BCD10780061C168 /* ViewController.h */,
-				C4CDC8BA1BCD10780061C168 /* ViewController.m */,
-				C4CDC8BC1BCD10780061C168 /* Main.storyboard */,
-				C4CDC8BF1BCD10780061C168 /* Assets.xcassets */,
-				C4CDC8C11BCD10780061C168 /* LaunchScreen.storyboard */,
-				C4CDC8C41BCD10780061C168 /* Info.plist */,
+				C4CDC92C1BCD3ED70061C168 /* Communicator */,
+				C4CDC92B1BCD3EC80061C168 /* Manager */,
+				C4CDC9291BCD3D790061C168 /* Delegates */,
+				C4CDC9281BCD3D530061C168 /* Storyboards */,
+				C4CDC9271BCD3D180061C168 /* ViewControllers */,
+				C4CDC92A1BCD3E170061C168 /* Plists */,
 				C4CDC8B31BCD10770061C168 /* Supporting Files */,
 			);
 			path = GoEuroObjC;
@@ -141,6 +146,59 @@
 				C4CDC8DA1BCD10780061C168 /* Info.plist */,
 			);
 			path = GoEuroObjCUITests;
+			sourceTree = "<group>";
+		};
+		C4CDC9271BCD3D180061C168 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C4CDC9241BCD37130061C168 /* GESearchViewController.h */,
+				C4CDC9251BCD37130061C168 /* GESearchViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C4CDC9281BCD3D530061C168 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C4CDC8C11BCD10780061C168 /* LaunchScreen.storyboard */,
+				C4CDC8BC1BCD10780061C168 /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		C4CDC9291BCD3D790061C168 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				C4CDC8B61BCD10780061C168 /* GEAppDelegate.h */,
+				C4CDC8B71BCD10780061C168 /* GEAppDelegate.m */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
+		C4CDC92A1BCD3E170061C168 /* Plists */ = {
+			isa = PBXGroup;
+			children = (
+				C4CDC8C41BCD10780061C168 /* Info.plist */,
+			);
+			name = Plists;
+			sourceTree = "<group>";
+		};
+		C4CDC92B1BCD3EC80061C168 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C4CDC9321BCD3F390061C168 /* GEManager.h */,
+				C4CDC9331BCD3F390061C168 /* GEManager.m */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
+		C4CDC92C1BCD3ED70061C168 /* Communicator */ = {
+			isa = PBXGroup;
+			children = (
+				C4CDC92D1BCD3F080061C168 /* GECommunicator.h */,
+				C4CDC92E1BCD3F080061C168 /* GECommunicator.m */,
+			);
+			name = Communicator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,7 +306,6 @@
 			files = (
 				C4CDC8C31BCD10780061C168 /* LaunchScreen.storyboard in Resources */,
 				C4CDC9231BCD2EC20061C168 /* Myriad Pro in Resources */,
-				C4CDC8C01BCD10780061C168 /* Assets.xcassets in Resources */,
 				C4CDC8BE1BCD10780061C168 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,8 +331,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4CDC8BB1BCD10780061C168 /* ViewController.m in Sources */,
-				C4CDC8B81BCD10780061C168 /* AppDelegate.m in Sources */,
+				C4CDC92F1BCD3F080061C168 /* GECommunicator.m in Sources */,
+				C4CDC9261BCD37130061C168 /* GESearchViewController.m in Sources */,
+				C4CDC9341BCD3F390061C168 /* GEManager.m in Sources */,
+				C4CDC8B81BCD10780061C168 /* GEAppDelegate.m in Sources */,
 				C4CDC8B51BCD10770061C168 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +343,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4CDC9311BCD3F190061C168 /* GESearchViewController.m in Sources */,
+				C4CDC9351BCD3F390061C168 /* GEManager.m in Sources */,
+				C4CDC9301BCD3F080061C168 /* GECommunicator.m in Sources */,
 				C4CDC8CE1BCD10780061C168 /* GoEuroObjCTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

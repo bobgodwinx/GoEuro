@@ -6,9 +6,9 @@
 //  Copyright © 2015 Bob Godwin Obi. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface GEAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
