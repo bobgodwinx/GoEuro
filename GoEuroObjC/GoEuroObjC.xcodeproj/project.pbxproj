@@ -15,6 +15,7 @@
 		C4CDC8C31BCD10780061C168 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4CDC8C11BCD10780061C168 /* LaunchScreen.storyboard */; };
 		C4CDC8CE1BCD10780061C168 /* GoEuroObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDC8CD1BCD10780061C168 /* GoEuroObjCTests.m */; };
 		C4CDC8D91BCD10780061C168 /* GoEuroObjCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDC8D81BCD10780061C168 /* GoEuroObjCUITests.m */; };
+		C4CDC9231BCD2EC20061C168 /* Myriad Pro in Resources */ = {isa = PBXBuildFile; fileRef = C4CDC9221BCD2EC20061C168 /* Myriad Pro */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		C4CDC8D41BCD10780061C168 /* GoEuroObjCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoEuroObjCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CDC8D81BCD10780061C168 /* GoEuroObjCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoEuroObjCUITests.m; sourceTree = "<group>"; };
 		C4CDC8DA1BCD10780061C168 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4CDC9221BCD2EC20061C168 /* Myriad Pro */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Myriad Pro"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		C4CDC8B31BCD10770061C168 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C4CDC9221BCD2EC20061C168 /* Myriad Pro */,
 				C4CDC8B41BCD10770061C168 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -244,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4CDC8C31BCD10780061C168 /* LaunchScreen.storyboard in Resources */,
+				C4CDC9231BCD2EC20061C168 /* Myriad Pro in Resources */,
 				C4CDC8C01BCD10780061C168 /* Assets.xcassets in Resources */,
 				C4CDC8BE1BCD10780061C168 /* Main.storyboard in Resources */,
 			);
