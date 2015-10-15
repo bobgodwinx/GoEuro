@@ -41,6 +41,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>NSLocationUsageDescription</key>
+    <string>Your location is needed to find the nearest station</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Your location is needed to find the nearest station</string>
     <key>UIAppFonts</key>
     <array>
         <string>MyriadPro-Regular.otf</string>
@@ -48,5 +52,10 @@
         <string>MyriadPro-Bold.otf</string>
         <string>MyriadPro-Light.otf</string>
     </array>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+    </dict>
 </dict>
 </plist>

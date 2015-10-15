@@ -7,7 +7,10 @@
 //
 
 @import UIKit;
-
-@interface GESearchViewController : UIViewController
+#import "GEManagerDelegate.h"
+#import "GELocationManagerDelegate.h"
+@interface GESearchViewController : UIViewController<GEManagerDelegate,
+                                                     GELocationManagerDelegate,
+                                                     UITextFieldDelegate>
 
 @end

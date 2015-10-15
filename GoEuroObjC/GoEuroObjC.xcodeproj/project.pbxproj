@@ -20,6 +20,24 @@
 		C4CDC9311BCD3F190061C168 /* GESearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDC9251BCD37130061C168 /* GESearchViewController.m */; settings = {ASSET_TAGS = (); }; };
 		C4CDC9341BCD3F390061C168 /* GEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDC9331BCD3F390061C168 /* GEManager.m */; settings = {ASSET_TAGS = (); }; };
 		C4CDC9351BCD3F390061C168 /* GEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDC9331BCD3F390061C168 /* GEManager.m */; settings = {ASSET_TAGS = (); }; };
+		C4CDC9391BCD48B40061C168 /* GEIdentifiers.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDC9381BCD48B40061C168 /* GEIdentifiers.m */; settings = {ASSET_TAGS = (); }; };
+		C4CDC93A1BCD48B40061C168 /* GEIdentifiers.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDC9381BCD48B40061C168 /* GEIdentifiers.m */; settings = {ASSET_TAGS = (); }; };
+		C4CDC93F1BCD58660061C168 /* GEQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDC93E1BCD58660061C168 /* GEQuery.m */; settings = {ASSET_TAGS = (); }; };
+		C4CDC9401BCD58660061C168 /* GEQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDC93E1BCD58660061C168 /* GEQuery.m */; settings = {ASSET_TAGS = (); }; };
+		C4CDC9451BCD64AB0061C168 /* GEBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDC9441BCD64AB0061C168 /* GEBuilder.m */; settings = {ASSET_TAGS = (); }; };
+		C4CDC9461BCD64AB0061C168 /* GEBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDC9441BCD64AB0061C168 /* GEBuilder.m */; settings = {ASSET_TAGS = (); }; };
+		C4CDC9491BCD90320061C168 /* GELocation.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDC9481BCD90320061C168 /* GELocation.m */; settings = {ASSET_TAGS = (); }; };
+		C4CDC94A1BCD90320061C168 /* GELocation.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDC9481BCD90320061C168 /* GELocation.m */; settings = {ASSET_TAGS = (); }; };
+		C4FF7E8C1BCFDA54006A44FD /* GELocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FF7E8B1BCFDA54006A44FD /* GELocationManager.m */; settings = {ASSET_TAGS = (); }; };
+		C4FF7E8D1BCFDA54006A44FD /* GELocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FF7E8B1BCFDA54006A44FD /* GELocationManager.m */; settings = {ASSET_TAGS = (); }; };
+		C4FF7E911BCFE197006A44FD /* GEBerlin.gpx in Resources */ = {isa = PBXBuildFile; fileRef = C4FF7E901BCFE197006A44FD /* GEBerlin.gpx */; settings = {ASSET_TAGS = (); }; };
+		C4FF7E951BCFEAA0006A44FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4FF7E941BCFEAA0006A44FD /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
+		C4FF7E981BCFEE1E006A44FD /* GELocationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FF7E971BCFEE1E006A44FD /* GELocationsTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C4FF7E991BCFEE1E006A44FD /* GELocationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FF7E971BCFEE1E006A44FD /* GELocationsTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C4FF7E9C1BCFEECC006A44FD /* GELocationsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FF7E9B1BCFEECC006A44FD /* GELocationsDataSource.m */; settings = {ASSET_TAGS = (); }; };
+		C4FF7E9D1BCFEECC006A44FD /* GELocationsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FF7E9B1BCFEECC006A44FD /* GELocationsDataSource.m */; settings = {ASSET_TAGS = (); }; };
+		C4FF7EA41BCFEFF3006A44FD /* GELocationsDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FF7EA31BCFEFF3006A44FD /* GELocationsDelegate.m */; settings = {ASSET_TAGS = (); }; };
+		C4FF7EA51BCFEFF3006A44FD /* GELocationsDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FF7EA31BCFEFF3006A44FD /* GELocationsDelegate.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +78,26 @@
 		C4CDC92E1BCD3F080061C168 /* GECommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GECommunicator.m; sourceTree = "<group>"; };
 		C4CDC9321BCD3F390061C168 /* GEManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GEManager.h; sourceTree = "<group>"; };
 		C4CDC9331BCD3F390061C168 /* GEManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GEManager.m; sourceTree = "<group>"; };
+		C4CDC9371BCD48B40061C168 /* GEIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GEIdentifiers.h; sourceTree = "<group>"; };
+		C4CDC9381BCD48B40061C168 /* GEIdentifiers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GEIdentifiers.m; sourceTree = "<group>"; };
+		C4CDC93D1BCD58660061C168 /* GEQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GEQuery.h; sourceTree = "<group>"; };
+		C4CDC93E1BCD58660061C168 /* GEQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GEQuery.m; sourceTree = "<group>"; };
+		C4CDC9411BCD5E250061C168 /* GEManagerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GEManagerDelegate.h; sourceTree = "<group>"; };
+		C4CDC9431BCD64AB0061C168 /* GEBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GEBuilder.h; sourceTree = "<group>"; };
+		C4CDC9441BCD64AB0061C168 /* GEBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GEBuilder.m; sourceTree = "<group>"; };
+		C4CDC9471BCD90320061C168 /* GELocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GELocation.h; sourceTree = "<group>"; };
+		C4CDC9481BCD90320061C168 /* GELocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GELocation.m; sourceTree = "<group>"; };
+		C4FF7E8A1BCFDA54006A44FD /* GELocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GELocationManager.h; sourceTree = "<group>"; };
+		C4FF7E8B1BCFDA54006A44FD /* GELocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GELocationManager.m; sourceTree = "<group>"; };
+		C4FF7E8F1BCFDB49006A44FD /* GELocationManagerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GELocationManagerDelegate.h; sourceTree = "<group>"; };
+		C4FF7E901BCFE197006A44FD /* GEBerlin.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GEBerlin.gpx; sourceTree = "<group>"; };
+		C4FF7E941BCFEAA0006A44FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C4FF7E961BCFEE1E006A44FD /* GELocationsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GELocationsTableViewController.h; sourceTree = "<group>"; };
+		C4FF7E971BCFEE1E006A44FD /* GELocationsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GELocationsTableViewController.m; sourceTree = "<group>"; };
+		C4FF7E9A1BCFEECC006A44FD /* GELocationsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GELocationsDataSource.h; sourceTree = "<group>"; };
+		C4FF7E9B1BCFEECC006A44FD /* GELocationsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GELocationsDataSource.m; sourceTree = "<group>"; };
+		C4FF7EA21BCFEFF3006A44FD /* GELocationsDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GELocationsDelegate.h; sourceTree = "<group>"; };
+		C4FF7EA31BCFEFF3006A44FD /* GELocationsDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GELocationsDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,11 +148,11 @@
 		C4CDC8B21BCD10770061C168 /* GoEuroObjC */ = {
 			isa = PBXGroup;
 			children = (
-				C4CDC92C1BCD3ED70061C168 /* Communicator */,
-				C4CDC92B1BCD3EC80061C168 /* Manager */,
-				C4CDC9291BCD3D790061C168 /* Delegates */,
+				C4CDC9291BCD3D790061C168 /* AppDelegate */,
+				C4CDC93B1BCD49310061C168 /* Controllers */,
+				C4CDC9421BCD64690061C168 /* Builders */,
+				C4CDC93C1BCD49490061C168 /* Models */,
 				C4CDC9281BCD3D530061C168 /* Storyboards */,
-				C4CDC9271BCD3D180061C168 /* ViewControllers */,
 				C4CDC92A1BCD3E170061C168 /* Plists */,
 				C4CDC8B31BCD10770061C168 /* Supporting Files */,
 			);
@@ -124,6 +162,8 @@
 		C4CDC8B31BCD10770061C168 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C4FF7E901BCFE197006A44FD /* GEBerlin.gpx */,
+				C4FF7E941BCFEAA0006A44FD /* Assets.xcassets */,
 				C4CDC9221BCD2EC20061C168 /* Myriad Pro */,
 				C4CDC8B41BCD10770061C168 /* main.m */,
 			);
@@ -153,6 +193,12 @@
 			children = (
 				C4CDC9241BCD37130061C168 /* GESearchViewController.h */,
 				C4CDC9251BCD37130061C168 /* GESearchViewController.m */,
+				C4FF7E961BCFEE1E006A44FD /* GELocationsTableViewController.h */,
+				C4FF7E971BCFEE1E006A44FD /* GELocationsTableViewController.m */,
+				C4FF7E9A1BCFEECC006A44FD /* GELocationsDataSource.h */,
+				C4FF7E9B1BCFEECC006A44FD /* GELocationsDataSource.m */,
+				C4FF7EA21BCFEFF3006A44FD /* GELocationsDelegate.h */,
+				C4FF7EA31BCFEFF3006A44FD /* GELocationsDelegate.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -166,13 +212,13 @@
 			name = Storyboards;
 			sourceTree = "<group>";
 		};
-		C4CDC9291BCD3D790061C168 /* Delegates */ = {
+		C4CDC9291BCD3D790061C168 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
 				C4CDC8B61BCD10780061C168 /* GEAppDelegate.h */,
 				C4CDC8B71BCD10780061C168 /* GEAppDelegate.m */,
 			);
-			name = Delegates;
+			name = AppDelegate;
 			sourceTree = "<group>";
 		};
 		C4CDC92A1BCD3E170061C168 /* Plists */ = {
@@ -188,6 +234,7 @@
 			children = (
 				C4CDC9321BCD3F390061C168 /* GEManager.h */,
 				C4CDC9331BCD3F390061C168 /* GEManager.m */,
+				C4CDC9411BCD5E250061C168 /* GEManagerDelegate.h */,
 			);
 			name = Manager;
 			sourceTree = "<group>";
@@ -199,6 +246,49 @@
 				C4CDC92E1BCD3F080061C168 /* GECommunicator.m */,
 			);
 			name = Communicator;
+			sourceTree = "<group>";
+		};
+		C4CDC93B1BCD49310061C168 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C4FF7E8E1BCFDA83006A44FD /* Core Location */,
+				C4CDC92C1BCD3ED70061C168 /* Communicator */,
+				C4CDC92B1BCD3EC80061C168 /* Manager */,
+				C4CDC9271BCD3D180061C168 /* ViewControllers */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C4CDC93C1BCD49490061C168 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C4CDC9371BCD48B40061C168 /* GEIdentifiers.h */,
+				C4CDC9381BCD48B40061C168 /* GEIdentifiers.m */,
+				C4CDC93D1BCD58660061C168 /* GEQuery.h */,
+				C4CDC93E1BCD58660061C168 /* GEQuery.m */,
+				C4CDC9471BCD90320061C168 /* GELocation.h */,
+				C4CDC9481BCD90320061C168 /* GELocation.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		C4CDC9421BCD64690061C168 /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				C4CDC9431BCD64AB0061C168 /* GEBuilder.h */,
+				C4CDC9441BCD64AB0061C168 /* GEBuilder.m */,
+			);
+			name = Builders;
+			sourceTree = "<group>";
+		};
+		C4FF7E8E1BCFDA83006A44FD /* Core Location */ = {
+			isa = PBXGroup;
+			children = (
+				C4FF7E8A1BCFDA54006A44FD /* GELocationManager.h */,
+				C4FF7E8B1BCFDA54006A44FD /* GELocationManager.m */,
+				C4FF7E8F1BCFDB49006A44FD /* GELocationManagerDelegate.h */,
+			);
+			name = "Core Location";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,8 +395,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4CDC8C31BCD10780061C168 /* LaunchScreen.storyboard in Resources */,
+				C4FF7E911BCFE197006A44FD /* GEBerlin.gpx in Resources */,
 				C4CDC9231BCD2EC20061C168 /* Myriad Pro in Resources */,
 				C4CDC8BE1BCD10780061C168 /* Main.storyboard in Resources */,
+				C4FF7E951BCFEAA0006A44FD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,9 +423,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4FF7E8C1BCFDA54006A44FD /* GELocationManager.m in Sources */,
+				C4CDC9391BCD48B40061C168 /* GEIdentifiers.m in Sources */,
+				C4CDC9451BCD64AB0061C168 /* GEBuilder.m in Sources */,
 				C4CDC92F1BCD3F080061C168 /* GECommunicator.m in Sources */,
+				C4CDC9491BCD90320061C168 /* GELocation.m in Sources */,
+				C4FF7EA41BCFEFF3006A44FD /* GELocationsDelegate.m in Sources */,
+				C4FF7E9C1BCFEECC006A44FD /* GELocationsDataSource.m in Sources */,
+				C4CDC93F1BCD58660061C168 /* GEQuery.m in Sources */,
 				C4CDC9261BCD37130061C168 /* GESearchViewController.m in Sources */,
 				C4CDC9341BCD3F390061C168 /* GEManager.m in Sources */,
+				C4FF7E981BCFEE1E006A44FD /* GELocationsTableViewController.m in Sources */,
 				C4CDC8B81BCD10780061C168 /* GEAppDelegate.m in Sources */,
 				C4CDC8B51BCD10770061C168 /* main.m in Sources */,
 			);
@@ -343,10 +443,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4CDC9401BCD58660061C168 /* GEQuery.m in Sources */,
+				C4FF7E8D1BCFDA54006A44FD /* GELocationManager.m in Sources */,
+				C4CDC93A1BCD48B40061C168 /* GEIdentifiers.m in Sources */,
+				C4FF7EA51BCFEFF3006A44FD /* GELocationsDelegate.m in Sources */,
 				C4CDC9311BCD3F190061C168 /* GESearchViewController.m in Sources */,
+				C4FF7E991BCFEE1E006A44FD /* GELocationsTableViewController.m in Sources */,
+				C4FF7E9D1BCFEECC006A44FD /* GELocationsDataSource.m in Sources */,
 				C4CDC9351BCD3F390061C168 /* GEManager.m in Sources */,
+				C4CDC94A1BCD90320061C168 /* GELocation.m in Sources */,
 				C4CDC9301BCD3F080061C168 /* GECommunicator.m in Sources */,
 				C4CDC8CE1BCD10780061C168 /* GoEuroObjCTests.m in Sources */,
+				C4CDC9461BCD64AB0061C168 /* GEBuilder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,6 +672,7 @@
 				C4CDC8DF1BCD10780061C168 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4CDC8E01BCD10780061C168 /* Build configuration list for PBXNativeTarget "GoEuroObjCTests" */ = {
 			isa = XCConfigurationList;
@@ -572,6 +681,7 @@
 				C4CDC8E21BCD10780061C168 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4CDC8E31BCD10780061C168 /* Build configuration list for PBXNativeTarget "GoEuroObjCUITests" */ = {
 			isa = XCConfigurationList;
@@ -580,6 +690,7 @@
 				C4CDC8E51BCD10780061C168 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -14,17 +14,22 @@ typedef NS_ENUM(NSInteger, GECommunicatorError){
     GECommunicatorNetworkingError,
     GECommunicatorSerializationError,
     GECommunicatorInvalidResponseError,
+    GECommunicatorNULLResponseError,
+    GECommunicatorInvalidError,
     GECommunicatorTimeoutError
 };
 
-extern NSString *const GECommunicatorErrorDomain;
 
-@interface GECommunicator : NSObject <NSURLSessionDelegate>
-
-- (instancetype)initWithBaseURL:(NSURL *)baseURL;
-
-- (void)fetchContentsWith:(NSDictionary *)parameters
-                  success:(void (^)(NSDictionary *response))success
-                  failure:(void (^)(NSError *error))failure;
+FOUNDATION_EXPORT NSString *__nonnull const GECommunicatorErrorDomain;
+/**
+ The communicator class is reponsible to make request to the API. Can only be called by the manager.
+ */
+@interface GECommunicator : NSObject
+/**
+ Fetch locations based on the user locale and search input.
+ */
+- (void)fetchLocationsWith:(nonnull NSDictionary *)parameters
+                  success:(void (^__nonnull)(NSArray *_Nullable response))success
+                  failure:(void (^__nonnull)(NSError *_Nullable error))failure;
 
 @end

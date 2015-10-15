@@ -14,6 +14,7 @@
 		C4CDC8FD1BCD10E40061C168 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4CDC8FB1BCD10E40061C168 /* LaunchScreen.storyboard */; };
 		C4CDC9081BCD10E50061C168 /* GoEuroSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CDC9071BCD10E50061C168 /* GoEuroSwiftTests.swift */; };
 		C4CDC9131BCD10E50061C168 /* GoEuroSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CDC9121BCD10E50061C168 /* GoEuroSwiftUITests.swift */; };
+		C4FF7E931BCFE258006A44FD /* GEBerlin.gpx in Resources */ = {isa = PBXBuildFile; fileRef = C4FF7E921BCFE258006A44FD /* GEBerlin.gpx */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		C4CDC90E1BCD10E50061C168 /* GoEuroSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoEuroSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CDC9121BCD10E50061C168 /* GoEuroSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoEuroSwiftUITests.swift; sourceTree = "<group>"; };
 		C4CDC9141BCD10E50061C168 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4FF7E921BCFE258006A44FD /* GEBerlin.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = GEBerlin.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				C4CDC8F91BCD10E40061C168 /* Assets.xcassets */,
 				C4CDC8FB1BCD10E40061C168 /* LaunchScreen.storyboard */,
 				C4CDC8FE1BCD10E40061C168 /* Info.plist */,
+				C4FF7E921BCFE258006A44FD /* GEBerlin.gpx */,
 			);
 			path = GoEuroSwift;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4CDC8FD1BCD10E40061C168 /* LaunchScreen.storyboard in Resources */,
+				C4FF7E931BCFE258006A44FD /* GEBerlin.gpx in Resources */,
 				C4CDC8FA1BCD10E40061C168 /* Assets.xcassets in Resources */,
 				C4CDC8F81BCD10E40061C168 /* Main.storyboard in Resources */,
 			);
@@ -483,6 +487,7 @@
 				C4CDC9191BCD10E50061C168 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4CDC91A1BCD10E50061C168 /* Build configuration list for PBXNativeTarget "GoEuroSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +496,7 @@
 				C4CDC91C1BCD10E50061C168 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4CDC91D1BCD10E50061C168 /* Build configuration list for PBXNativeTarget "GoEuroSwiftUITests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +505,7 @@
 				C4CDC91F1BCD10E50061C168 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
