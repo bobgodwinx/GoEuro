@@ -12,17 +12,22 @@
 #import "GELocation.h"
 #import "GELocationManagerDelegate.h"
 #import "GELocationManager.h"
+#import "GELocationsTableViewController.h"
+#import "GELocationsDataSource.h"
+#import "GELocationsDelegate.h"
+#import "GEIdentifiers.h"
 @import CoreLocation;
 
 @interface GESearchViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *departureTextField;
 @property (weak, nonatomic) IBOutlet UITextField *arrivalTextField;
+@property (weak, nonatomic) IBOutlet UITextField *dateTextField;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *datePickerHeightConstraint;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UIButton *searchBtn;
 @property (nonnull, nonatomic) GEManager *manager;
 @property (nonnull, nonatomic) GELocationManager *locationManager;
-@property (nonnull, nonatomic) GEQuery *query;
 @property (nonnull, nonatomic) NSArray *locations;
 
 @end
@@ -31,25 +36,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.navigationBarHidden = YES;
     [self.locationManager requestCurrentLocation];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
     [self configureTextField:self.arrivalTextField];
     [self configureTextField:self.departureTextField];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    //[self.manager fetchLocationsWithQuery:self.query];
-}
-
-#pragma mark - Prepare for segue
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-
+    [self configureTextField:self.dateTextField];
+    self.datePickerHeightConstraint.constant = 0.0;
+    
 }
 
 #pragma mark - Lazy initializer
@@ -68,26 +65,39 @@
     return _locationManager;
 }
 
-- (GEQuery *)query {
-    if (!_query) {
-        /**
-         This is just to start the query with default settings Berlin
-         */
-        _query = [[GEQuery alloc] initWithLocale:@"DE" term:@"Berlin"];
-    }
-    
-    return _query;
-}
-
 #pragma mark - configureTextField
 
 - (void)configureTextField:(UITextField *)textField {
+    if(textField == self.dateTextField){
+        textField.layer.borderColor = self.manager.geRoyalBlueColor.CGColor;
+        textField.text = [self.manager.dateFormatter stringFromDate:[NSDate date]];
+    }
+    textField.delegate = self;
     textField.layer.borderColor = self.manager.geAliceBlueColor.CGColor;
     textField.layer.borderWidth = 1.00;
     textField.layer.cornerRadius = 7.00;
     UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 42)];
     textField.leftView = paddingView;
     textField.leftViewMode = UITextFieldViewModeAlways;
+}
+
+
+- (void)performSearchWithString:(NSString *)searchString {
+    if(searchString.length > 0){
+        searchString = [searchString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        GEQuery *query = [[GEQuery alloc]initWithLocale:@"DE" term:searchString];
+        [self.manager fetchLocationsWithQuery:query];
+    } else {
+    
+        //FIXME: Handle message
+    }
+}
+
+#pragma mark - UIDatePicker value change
+
+- (IBAction)datePickerValueDidChange:(id)sender {
+    UIDatePicker *datePicker = (UIDatePicker *)sender;
+    self.dateTextField.text = [self.manager.dateFormatter stringFromDate:datePicker.date];
 }
 
 #pragma mark - presentAlertViewWithError
@@ -107,8 +117,10 @@
 
 - (void)managerDidFinishFetchingLocations:(NSArray *)locations {
     self.locations = locations;
-    GELocation *location = locations[0];
-    self.arrivalTextField.text = location.fullName;
+    if (self.locations.count > 0) {
+        GELocation *location = self.locations[0];
+        self.arrivalTextField.text = location.fullName;
+    }
 }
 
 - (void)managerDidFailFetchingLocationsWithError:(NSError *)error {
@@ -148,8 +160,77 @@
 
 - (void)locationDidFindCurrentLocality:(NSString *)locality {
     self.departureTextField.text = locality;
-    GEQuery *query = [[GEQuery alloc]initWithLocale:@"DE" term:locality];
-    [self.manager fetchLocationsWithQuery:query];
+    if (locality) {
+        [self performSearchWithString:locality];
+    }
+}
+
+#pragma mark - Prepare for segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:kLocationsTableViewControllerSegue]){
+        GELocationsTableViewController *locationsTableViewController = (GELocationsTableViewController *)segue.destinationViewController;
+        locationsTableViewController.dataSource.locations = self.locations;
+    }
+}
+
+#pragma mark - Unwind segue
+
+
+- (IBAction)unwindFromLocationsTableViewController:(UIStoryboardSegue *)sender {
+    if([sender.identifier isEqualToString:kUnwindFromLocationsTableViewController]){
+        GELocationsTableViewController *locationsTableViewController = (GELocationsTableViewController *)sender.sourceViewController;
+        GELocation *location = locationsTableViewController.delegate.selectedLocation;
+        self.arrivalTextField.text = location.fullName;
+    }
+}
+
+#pragma mark - Search Location
+
+- (IBAction)searchLocations:(id)sender {
+    if(self.departureTextField.text.length > 0){
+        [self performSearchWithString:self.departureTextField.text];
+    }
+}
+
+#pragma mark - UITextFieldDelegate
+
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if([string  isEqual:@"\n"]){
+        [textField resignFirstResponder];
+        if(textField == self.departureTextField){
+            [self performSearchWithString:self.departureTextField.text];
+        }
+        return NO;
+    }
+    return YES;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    if (textField == self.dateTextField || textField == self.arrivalTextField) {
+        [textField resignFirstResponder];
+        textField.tintColor = [UIColor clearColor];
+        if (textField == self.dateTextField) {
+            if(self.datePickerHeightConstraint.constant == 0.00){
+                self.datePickerHeightConstraint.constant = 139.00;
+            } else {
+                self.datePickerHeightConstraint.constant = 0.00;
+            }
+        } else if (textField == self.arrivalTextField) {
+            [self performSegueWithIdentifier:kLocationsTableViewControllerSegue sender:self];
+        }
+    }
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+    [super touchesBegan:touches withEvent:event];
 }
 
 @end

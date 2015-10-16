@@ -51,10 +51,7 @@ NSString *const GELocationManagerErrorDomain = @"GELocationManagerErrorDomain";
 #pragma mark - RequestCurrentLocation
 
 - (void)requestCurrentLocation {
-    if([UIDevice currentDevice].systemVersion.floatValue >= 8.0){
-        [self.locationManager requestWhenInUseAuthorization];
-    }
-    
+    [self.locationManager requestWhenInUseAuthorization];
     [self.locationManager startUpdatingLocation];
 }
 

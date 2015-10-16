@@ -49,5 +49,13 @@ FOUNDATION_EXPORT NSString *__nonnull const kTypeLocationString;
 FOUNDATION_EXPORT NSString *__nonnull const kTypeAirportString;
 FOUNDATION_EXPORT NSString *__nonnull const kTypeStationString;
 
-
+/**
+ TableViewCell identiiers
+ */
+FOUNDATION_EXPORT NSString *__nonnull const kGELocationsCell;
+/**
+ Unwind Segues identifiers + Segues
+ */
+FOUNDATION_EXPORT NSString *__nonnull const kLocationsTableViewControllerSegue;
+FOUNDATION_EXPORT NSString *__nonnull const kUnwindFromLocationsTableViewController;
 @end

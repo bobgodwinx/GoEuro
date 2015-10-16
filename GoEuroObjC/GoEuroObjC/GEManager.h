@@ -18,7 +18,11 @@
 
 @property (nonnull, nonatomic) UIColor *geRoyalBlueColor;
 @property (nonnull, nonatomic) UIColor *geAliceBlueColor;
-
+@property (nonnull, nonatomic) UIColor *geGrayColor;
+/**
+ Dispatched date formatter
+ */
+@property (nonnull, nonatomic, readonly) NSDateFormatter *dateFormatter;
 /**
  Designated Initializer method. Needs a Delegate that conforms to GEManagerDelegate protocol.
  */

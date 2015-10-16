@@ -6,8 +6,13 @@
 //  Copyright © 2015 Bob Godwin Obi. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+@class GELocationsDataSource;
+@class GELocationsDelegate;
 
 @interface GELocationsTableViewController : UITableViewController
+
+@property (weak, nonatomic) IBOutlet GELocationsDelegate *delegate;
+@property (weak, nonatomic) IBOutlet GELocationsDataSource *dataSource;
 
 @end

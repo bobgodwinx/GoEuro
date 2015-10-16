@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B38b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="spg-Rx-BQM">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="MyriadPro-Regular.otf">
+            <string>MyriadPro-Regular</string>
+            <string>MyriadPro-Regular</string>
             <string>MyriadPro-Regular</string>
             <string>MyriadPro-Regular</string>
             <string>MyriadPro-Regular</string>
@@ -70,38 +73,18 @@
                                 <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13-10-2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gl0-3A-xC1">
-                                <rect key="frame" x="20" y="312" width="505" height="42"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.86666666670000003" green="0.92941176469999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" priority="990" constant="505" id="br3-Ld-Rld"/>
-                                    <constraint firstAttribute="height" constant="42" id="tdm-we-iaH"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="18"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcf-bY-djf">
-                                <rect key="frame" x="538" y="312" width="42" height="42"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.59215686270000001" green="0.0" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="6oJ-gp-MlD"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="M9n-oZ-gbU"/>
-                                    <constraint firstAttribute="width" constant="42" id="ZaB-YV-xe2"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="M9n-oZ-gbU"/>
-                                    </mask>
-                                </variation>
-                            </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZJj-UA-YdP">
-                                <rect key="frame" x="20" y="369" width="560" height="130"/>
+                                <rect key="frame" x="20" y="360" width="560" height="139"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="139" id="HFd-ZC-xPc"/>
+                                </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="466430477.56427699">
                                     <!--2015-10-13 12:01:17 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="datePickerValueDidChange:" destination="Jw8-iz-6Lo" eventType="valueChanged" id="sx0-Az-KAi"/>
+                                </connections>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Hy-SK-cGp">
                                 <rect key="frame" x="0.0" y="552" width="600" height="55"/>
@@ -114,41 +97,41 @@
                                 <state key="normal" title="Search">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="searchLocations:" destination="Jw8-iz-6Lo" eventType="touchUpInside" id="FTT-Cj-4FW"/>
+                                </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GEDataPickerButton" translatesAutoresizingMaskIntoConstraints="NO" id="f3x-CQ-4aF">
-                                <rect key="frame" x="548" y="322" width="22" height="22"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="15-10-2015" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xty-Tp-dZS">
+                                <rect key="frame" x="20" y="310" width="560" height="42"/>
                                 <animations/>
+                                <color key="backgroundColor" red="0.86666666670000003" green="0.92941176469999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="22" id="Ui6-5L-0x1"/>
-                                    <constraint firstAttribute="height" constant="22" id="z7C-Ya-tCk"/>
+                                    <constraint firstAttribute="height" constant="42" id="FG8-rL-uDB"/>
                                 </constraints>
-                            </imageView>
+                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="1Hy-SK-cGp" firstAttribute="leading" secondItem="gag-Z4-O0h" secondAttribute="leadingMargin" constant="-20" id="0mV-m2-sA2"/>
+                            <constraint firstItem="Xty-Tp-dZS" firstAttribute="trailing" secondItem="3zq-Sa-nd7" secondAttribute="trailing" id="6Wx-Y8-T0s"/>
                             <constraint firstItem="3zq-Sa-nd7" firstAttribute="leading" secondItem="gag-Z4-O0h" secondAttribute="leadingMargin" id="ATv-E3-Vwt"/>
                             <constraint firstItem="CAm-FC-jL4" firstAttribute="top" secondItem="1Hy-SK-cGp" secondAttribute="bottom" constant="-7" id="DLZ-YM-ykh"/>
                             <constraint firstItem="3zq-Sa-nd7" firstAttribute="top" secondItem="OHY-Y1-wLR" secondAttribute="bottom" constant="15" id="FP1-Q3-JHE"/>
                             <constraint firstItem="3zq-Sa-nd7" firstAttribute="leading" secondItem="OHY-Y1-wLR" secondAttribute="leading" id="HhD-dP-IGV"/>
                             <constraint firstItem="OHY-Y1-wLR" firstAttribute="centerX" secondItem="hSc-Rn-cEy" secondAttribute="centerX" priority="990" id="MiE-Vh-RXy"/>
-                            <constraint firstItem="gcf-bY-djf" firstAttribute="leading" secondItem="Gl0-3A-xC1" secondAttribute="trailing" constant="13" id="VDj-7r-fhL"/>
-                            <constraint firstItem="gcf-bY-djf" firstAttribute="top" secondItem="3zq-Sa-nd7" secondAttribute="bottom" constant="17" id="WbP-fE-EHf"/>
-                            <constraint firstItem="ZJj-UA-YdP" firstAttribute="top" secondItem="gcf-bY-djf" secondAttribute="bottom" constant="15" id="Xe8-kw-dqD"/>
-                            <constraint firstItem="f3x-CQ-4aF" firstAttribute="centerY" secondItem="gcf-bY-djf" secondAttribute="centerY" id="Y3G-gR-akb"/>
-                            <constraint firstItem="CAm-FC-jL4" firstAttribute="top" secondItem="ZJj-UA-YdP" secondAttribute="bottom" constant="101" id="ZjH-fc-vJO"/>
+                            <constraint firstItem="Xty-Tp-dZS" firstAttribute="top" secondItem="3zq-Sa-nd7" secondAttribute="bottom" constant="15" id="Qai-aq-75k"/>
+                            <constraint firstItem="CAm-FC-jL4" firstAttribute="top" secondItem="ZJj-UA-YdP" secondAttribute="bottom" priority="990" constant="101" id="ZjH-fc-vJO"/>
                             <constraint firstItem="1Hy-SK-cGp" firstAttribute="trailing" secondItem="gag-Z4-O0h" secondAttribute="trailingMargin" constant="20" id="a3H-TH-x0q"/>
-                            <constraint firstItem="Gl0-3A-xC1" firstAttribute="leading" secondItem="gag-Z4-O0h" secondAttribute="leadingMargin" id="dtA-7b-UyS"/>
-                            <constraint firstItem="1Hy-SK-cGp" firstAttribute="top" secondItem="Gl0-3A-xC1" secondAttribute="bottom" priority="990" constant="198" id="jwG-td-VN2"/>
-                            <constraint firstItem="Gl0-3A-xC1" firstAttribute="top" secondItem="3zq-Sa-nd7" secondAttribute="bottom" constant="17" id="nXO-Cc-j2H"/>
+                            <constraint firstItem="Xty-Tp-dZS" firstAttribute="leading" secondItem="ZJj-UA-YdP" secondAttribute="leading" id="eYD-Qb-1cz"/>
+                            <constraint firstItem="ZJj-UA-YdP" firstAttribute="top" secondItem="Xty-Tp-dZS" secondAttribute="bottom" constant="8" symbolic="YES" id="jod-5o-YIk"/>
+                            <constraint firstItem="Xty-Tp-dZS" firstAttribute="leading" secondItem="3zq-Sa-nd7" secondAttribute="leading" id="mo6-a5-CMl"/>
                             <constraint firstItem="OHY-Y1-wLR" firstAttribute="top" secondItem="hSc-Rn-cEy" secondAttribute="bottom" constant="40" id="niM-Pp-13S"/>
-                            <constraint firstItem="ZJj-UA-YdP" firstAttribute="trailing" secondItem="gcf-bY-djf" secondAttribute="trailing" id="o0I-xb-zei"/>
-                            <constraint firstItem="gcf-bY-djf" firstAttribute="trailing" secondItem="gag-Z4-O0h" secondAttribute="trailingMargin" id="pMp-oO-yxG"/>
+                            <constraint firstItem="Xty-Tp-dZS" firstAttribute="trailing" secondItem="ZJj-UA-YdP" secondAttribute="trailing" id="noh-D1-WCv"/>
                             <constraint firstItem="3zq-Sa-nd7" firstAttribute="trailing" secondItem="gag-Z4-O0h" secondAttribute="trailingMargin" id="tKa-Tf-L4g"/>
                             <constraint firstItem="hSc-Rn-cEy" firstAttribute="top" secondItem="FQo-N7-P45" secondAttribute="bottom" constant="60" id="tNB-06-H5I"/>
-                            <constraint firstItem="f3x-CQ-4aF" firstAttribute="centerX" secondItem="gcf-bY-djf" secondAttribute="centerX" id="tVF-5X-YHh"/>
-                            <constraint firstItem="ZJj-UA-YdP" firstAttribute="leading" secondItem="Gl0-3A-xC1" secondAttribute="leading" id="uvz-Li-v0N"/>
                             <constraint firstItem="OHY-Y1-wLR" firstAttribute="trailing" secondItem="3zq-Sa-nd7" secondAttribute="trailing" id="zxV-uz-zvj"/>
                         </constraints>
                     </view>
@@ -156,9 +139,11 @@
                     <connections>
                         <outlet property="arrivalTextField" destination="3zq-Sa-nd7" id="UlB-Xt-pi5"/>
                         <outlet property="datePicker" destination="ZJj-UA-YdP" id="jPh-DN-oVC"/>
+                        <outlet property="datePickerHeightConstraint" destination="HFd-ZC-xPc" id="6SS-Wr-FXQ"/>
+                        <outlet property="dateTextField" destination="Xty-Tp-dZS" id="QPK-b7-1YI"/>
                         <outlet property="departureTextField" destination="OHY-Y1-wLR" id="6ub-g6-vzN"/>
                         <outlet property="searchBtn" destination="1Hy-SK-cGp" id="S0A-DU-lsg"/>
-                        <segue destination="AbB-F7-4tg" kind="show" identifier="GELocationsTableViewControllerSegue" id="dUj-rJ-TtN"/>
+                        <segue destination="AbB-F7-4tg" kind="show" identifier="LocationsTableViewControllerSegue" id="dUj-rJ-TtN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j2w-Md-NR3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -169,38 +154,75 @@
         <scene sceneID="eOZ-sV-BcA">
             <objects>
                 <tableViewController id="AbB-F7-4tg" customClass="GELocationsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="lqq-x9-MOR">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="lqq-x9-MOR">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="sEG-kI-dtH">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="GELocationsCell" id="sEG-kI-dtH" customClass="GELocationsCell">
+                                <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sEG-kI-dtH" id="5eL-r6-mWV">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="561" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvf-Xc-dxQ">
+                                            <rect key="frame" x="13" y="0.0" width="548" height="21"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="PO6-JB-Tf3"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="18"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6Y-0q-duR">
+                                            <rect key="frame" x="13" y="22" width="548" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="14"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="a6Y-0q-duR" secondAttribute="bottom" constant="-7.5" id="6e9-L4-jGa"/>
+                                        <constraint firstAttribute="trailing" secondItem="yvf-Xc-dxQ" secondAttribute="trailing" id="8kX-oY-kXd"/>
+                                        <constraint firstItem="yvf-Xc-dxQ" firstAttribute="top" secondItem="5eL-r6-mWV" secondAttribute="top" id="Hvc-ZC-7Cx"/>
+                                        <constraint firstItem="yvf-Xc-dxQ" firstAttribute="leading" secondItem="5eL-r6-mWV" secondAttribute="leadingMargin" constant="5" id="T9G-IR-NXW"/>
+                                        <constraint firstItem="yvf-Xc-dxQ" firstAttribute="leading" secondItem="a6Y-0q-duR" secondAttribute="leading" id="iyW-h1-KgG"/>
+                                        <constraint firstItem="a6Y-0q-duR" firstAttribute="top" secondItem="yvf-Xc-dxQ" secondAttribute="bottom" constant="1" id="xka-nY-ZRG"/>
+                                        <constraint firstItem="yvf-Xc-dxQ" firstAttribute="trailing" secondItem="a6Y-0q-duR" secondAttribute="trailing" id="y0x-qT-llw"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <outlet property="locationDescription" destination="a6Y-0q-duR" id="dt0-Hx-W6K"/>
+                                    <outlet property="locationName" destination="yvf-Xc-dxQ" id="VMF-ou-XfM"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="AbB-F7-4tg" id="Nwg-Zu-83Y"/>
-                            <outlet property="delegate" destination="AbB-F7-4tg" id="Dvy-99-8vf"/>
+                            <outlet property="dataSource" destination="Fs7-Ov-LKd" id="54w-ST-05Q"/>
+                            <outlet property="delegate" destination="vIq-dC-AT2" id="paA-wd-PWM"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="dataSource" destination="Fs7-Ov-LKd" id="TgW-px-EtO"/>
+                        <outlet property="delegate" destination="vIq-dC-AT2" id="Uie-zQ-6dg"/>
+                        <segue destination="soI-JK-kmF" kind="unwind" identifier="UnwindFromLocationsTableViewControllerSegue" unwindAction="unwindFromLocationsTableViewController:" id="aOA-0Y-82f"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lh3-V6-SdH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="vIq-dC-AT2" customClass="GELocationsDelegate"/>
                 <customObject id="Fs7-Ov-LKd" customClass="GELocationsDataSource"/>
+                <exit id="soI-JK-kmF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1831" y="366"/>
+            <point key="canvasLocation" x="1767" y="366"/>
         </scene>
     </scenes>
     <resources>
-        <image name="GEDataPickerButton" width="22" height="22"/>
         <image name="GELogo" width="132" height="32"/>
     </resources>
 </document>

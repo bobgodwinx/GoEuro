@@ -38,6 +38,8 @@
 		C4FF7E9D1BCFEECC006A44FD /* GELocationsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FF7E9B1BCFEECC006A44FD /* GELocationsDataSource.m */; settings = {ASSET_TAGS = (); }; };
 		C4FF7EA41BCFEFF3006A44FD /* GELocationsDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FF7EA31BCFEFF3006A44FD /* GELocationsDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		C4FF7EA51BCFEFF3006A44FD /* GELocationsDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FF7EA31BCFEFF3006A44FD /* GELocationsDelegate.m */; settings = {ASSET_TAGS = (); }; };
+		C4FF7EA91BD101C3006A44FD /* GELocationsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FF7EA81BD101C3006A44FD /* GELocationsCell.m */; settings = {ASSET_TAGS = (); }; };
+		C4FF7EAA1BD101C3006A44FD /* GELocationsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FF7EA81BD101C3006A44FD /* GELocationsCell.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,8 @@
 		C4FF7E9B1BCFEECC006A44FD /* GELocationsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GELocationsDataSource.m; sourceTree = "<group>"; };
 		C4FF7EA21BCFEFF3006A44FD /* GELocationsDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GELocationsDelegate.h; sourceTree = "<group>"; };
 		C4FF7EA31BCFEFF3006A44FD /* GELocationsDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GELocationsDelegate.m; sourceTree = "<group>"; };
+		C4FF7EA71BD101C3006A44FD /* GELocationsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GELocationsCell.h; sourceTree = "<group>"; };
+		C4FF7EA81BD101C3006A44FD /* GELocationsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GELocationsCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +272,8 @@
 				C4CDC93E1BCD58660061C168 /* GEQuery.m */,
 				C4CDC9471BCD90320061C168 /* GELocation.h */,
 				C4CDC9481BCD90320061C168 /* GELocation.m */,
+				C4FF7EA71BD101C3006A44FD /* GELocationsCell.h */,
+				C4FF7EA81BD101C3006A44FD /* GELocationsCell.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -358,6 +364,7 @@
 				TargetAttributes = {
 					C4CDC8AF1BCD10770061C168 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = FQSY778SP8;
 					};
 					C4CDC8C81BCD10780061C168 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -431,6 +438,7 @@
 				C4FF7EA41BCFEFF3006A44FD /* GELocationsDelegate.m in Sources */,
 				C4FF7E9C1BCFEECC006A44FD /* GELocationsDataSource.m in Sources */,
 				C4CDC93F1BCD58660061C168 /* GEQuery.m in Sources */,
+				C4FF7EA91BD101C3006A44FD /* GELocationsCell.m in Sources */,
 				C4CDC9261BCD37130061C168 /* GESearchViewController.m in Sources */,
 				C4CDC9341BCD3F390061C168 /* GEManager.m in Sources */,
 				C4FF7E981BCFEE1E006A44FD /* GELocationsTableViewController.m in Sources */,
@@ -444,6 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4CDC9401BCD58660061C168 /* GEQuery.m in Sources */,
+				C4FF7EAA1BD101C3006A44FD /* GELocationsCell.m in Sources */,
 				C4FF7E8D1BCFDA54006A44FD /* GELocationManager.m in Sources */,
 				C4CDC93A1BCD48B40061C168 /* GEIdentifiers.m in Sources */,
 				C4FF7EA51BCFEFF3006A44FD /* GELocationsDelegate.m in Sources */,
@@ -587,10 +596,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GoEuroObjC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bobgodwinx.GoEuroObjC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -598,10 +611,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GoEuroObjC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bobgodwinx.GoEuroObjC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

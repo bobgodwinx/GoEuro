@@ -39,13 +39,12 @@
         _delegate = aDelegate;
         _geAliceBlueColor = [UIColor colorWithRed:0.8941176471 green:0.9450980392 blue:0.9960784314 alpha:1];
         _geRoyalBlueColor = [UIColor colorWithRed:0.2549019608 green:0.5137254902 blue:0.8431372549 alpha:1];
+        _geGrayColor = [UIColor colorWithRed:0.6862745098 green:0.6862745098 blue:0.6862745098 alpha:1];
     }
     return self;
 }
 
-/**
- Lazy Init for communicator
- */
+#pragma mark - Lazy initializers
 
 - (nonnull GECommunicator *)communicator {
     if (!_communicator) {
@@ -55,7 +54,32 @@
     return  _communicator;
 }
 
+- (GEBuilder *)builder {
+    if (!_builder) {
+        _builder = [[GEBuilder alloc]init];
+    }
+    return _builder;
+}
+
+- (NSDateFormatter *)dateFormatter {
+    static NSDateFormatter *dateFormatter = nil;
+    static dispatch_once_t __dispatchToken = 0;
+    dispatch_once(&__dispatchToken, ^{
+        dateFormatter = [[NSDateFormatter alloc] init];
+        /**
+         Using Germany as default locale.
+         */
+        dateFormatter.locale = [NSLocale localeWithLocaleIdentifier:@"de_DE"];
+        dateFormatter.dateStyle = NSDateFormatterShortStyle;
+        dateFormatter.timeStyle = NSDateFormatterShortStyle;
+    });
+    return dateFormatter;
+}
+
+#pragma mark - FetchLocations
+
 - (void)fetchLocationsWithQuery:(nonnull GEQuery *)query {
+    
     NSDictionary *parameters = [self.builder buildParamentersFromQuery:query];
     __weak typeof(self)weakSelf = self;
     [self.communicator fetchLocationsWith:parameters success:^(NSArray * _Nullable response) {
@@ -65,13 +89,13 @@
             [strongSelf.delegate managerDidFinishFetchingLocations:locations];
         } else {
             NSError *error = [NSError errorWithDomain:GECommunicatorErrorDomain
-                                                    code:GECommunicatorNULLResponseError
-                                                userInfo:@{
-                                                           NSLocalizedDescriptionKey: NSLocalizedString(@"No location found", @"Error description.")
-                                                           }];
+                                                 code:GECommunicatorNULLResponseError
+                                             userInfo:@{
+                                                        NSLocalizedDescriptionKey: NSLocalizedString(@"No location found", @"Error description.")
+                                                        }];
             [strongSelf.delegate managerDidFailFetchingLocationsWithError:error];
         }
-
+        
     } failure:^(NSError * _Nullable error) {
         __strong typeof(weakSelf)strongSelf = weakSelf;
         if(error){
@@ -82,20 +106,9 @@
                                              userInfo:@{
                                                         NSLocalizedDescriptionKey: NSLocalizedString(@"Invalid error", @"Error description.")
                                                         }];
-             [strongSelf.delegate managerDidFailFetchingLocationsWithError:error];
+            [strongSelf.delegate managerDidFailFetchingLocationsWithError:error];
         }
     }];
-}
-
-/**
- Lazy initializer for builder
- */
-
-- (GEBuilder *)builder {
-    if (!_builder) {
-        _builder = [[GEBuilder alloc]init];
-    }
-    return _builder;
 }
 
 @end

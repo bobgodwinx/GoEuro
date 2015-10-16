@@ -24,10 +24,6 @@ NSString *const kHTTPMethodGET = @"GET";
 #pragma mark - init
 
 - (instancetype)init {
-    return [self initWithBaseURL:[NSURL URLWithString:@"www.goeuro.de"]];
-}
-
-- (nonnull instancetype)initWithBaseURL:(NSURL *)baseURL{
     self = [super init];
     if(self){
         _URLSession = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];

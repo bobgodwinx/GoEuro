@@ -7,7 +7,18 @@
 //
 
 #import "GELocationsDelegate.h"
+#import "GELocationsDataSource.h"
+#import "GELocationsTableViewController.h"
+#import "GEIdentifiers.h"
 
 @implementation GELocationsDelegate
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    GELocationsDataSource *dataSource =  (GELocationsDataSource *)tableView.dataSource;
+    self.selectedLocation = dataSource.locations[indexPath.row];
+    [self.locationsTableViewController performSegueWithIdentifier:kUnwindFromLocationsTableViewController sender:self.locationsTableViewController];
+}
 
 @end

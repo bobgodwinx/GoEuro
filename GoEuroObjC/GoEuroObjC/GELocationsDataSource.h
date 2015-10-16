@@ -9,6 +9,8 @@
 @import Foundation;
 @import UIKit;
 
-@interface GELocationsDataSource : NSObject<UITableViewDataSource>
+@interface GELocationsDataSource : NSObject<UITableViewDataSource, NSCopying>
+
+@property (nonatomic) NSArray *locations;
 
 @end

@@ -41,4 +41,12 @@ NSString *const kTypeLocationString = @"location";
 NSString *const kTypeAirportString = @"airport";
 NSString *const kTypeStationString = @"station";
 
+#pragma mark - TableViewCell identifers
+
+NSString *const kGELocationsCell = @"GELocationsCell";
+
+#pragma mark - Unwind segues + Segues
+
+NSString *const kLocationsTableViewControllerSegue = @"LocationsTableViewControllerSegue";
+NSString *const kUnwindFromLocationsTableViewController = @"UnwindFromLocationsTableViewControllerSegue";
 @end
