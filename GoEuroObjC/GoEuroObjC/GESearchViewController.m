@@ -79,6 +79,11 @@
     UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 42)];
     textField.leftView = paddingView;
     textField.leftViewMode = UITextFieldViewModeAlways;
+    
+    if(textField == self.arrivalTextField){
+        textField.rightView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Disclosure"]];
+        textField.rightViewMode = UITextFieldViewModeAlways;
+    }
 }
 
 
@@ -88,7 +93,6 @@
         GEQuery *query = [[GEQuery alloc]initWithLocale:@"DE" term:searchString];
         [self.manager fetchLocationsWithQuery:query];
     } else {
-    
         //FIXME: Handle message
     }
 }

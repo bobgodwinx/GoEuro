@@ -47,9 +47,14 @@ class SearchViewController: UIViewController, ManagerDelegate, UITextFieldDelega
         textField.layer.borderColor = Manager.sharedInstance.geAliceBlueColor.CGColor
         textField.layer.borderWidth = 1.00
         textField.layer.cornerRadius = 7.00
-        let paddingView = UIView(frame: CGRectMake(0, 0, 10, 42))
-        textField.leftView = paddingView
+        let leftPaddingView = UIView(frame: CGRectMake(0, 0, 10, 42))
+        textField.leftView = leftPaddingView
         textField.leftViewMode = .Always;
+        
+        if textField == arrivalTextField {
+            textField.rightView = UIImageView(image: UIImage(named: "Disclosure"))
+            textField.rightViewMode = .Always
+        }
     }
     
     // MARK: - Prepare for segue.
