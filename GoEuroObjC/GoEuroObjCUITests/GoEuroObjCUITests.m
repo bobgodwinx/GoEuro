@@ -7,34 +7,59 @@
 //
 
 #import <XCTest/XCTest.h>
+@import UIKit;
+@import Foundation;
 
 @interface GoEuroObjCUITests : XCTestCase
 
+@property (nonatomic) XCUIApplication *app;
+
 @end
+
+NSString *const kDepartureTextField = @"Departure Text Field";
+NSString *const kArrivalTextField = @"Arrival Text Field";
+NSString *const kDateTextField = @"Date Text Field";
 
 @implementation GoEuroObjCUITests
 
 - (void)setUp {
     [super setUp];
-    
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-    
-    // In UI tests it is usually best to stop immediately when a failure occurs.
+    self.app = [[XCUIApplication alloc] init];
     self.continueAfterFailure = NO;
-    // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
     [[[XCUIApplication alloc] init] launch];
-    
-    // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
+    self.app = nil;
     [super tearDown];
 }
 
-- (void)testExample {
-    // Use recording to get started writing UI tests.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+- (void)testThatDepartureTextFieldChanges {
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    XCUIElement *departureTextFieldTextField = app.textFields[kDepartureTextField];
+    [departureTextFieldTextField tap];
+    [departureTextFieldTextField typeText:@"Berlin"];
+    NSString *departureString = (NSString *)departureTextFieldTextField.value;
+    XCTAssertTrue(departureString.length > 0, "Can't type into departure textField");
 }
 
+- (void)testThatArrivaTextFieldWasTapped {
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    XCUIElement *arrivalTextFieldTextField = app.textFields[kArrivalTextField];
+    [arrivalTextFieldTextField tap];
+    NSString *locationsTitle = (NSString *)app.navigationBars.element.identifier;
+    XCTAssertTrue([locationsTitle isEqualToString:@"Locations"], "Error on arrival TextField. Please check that perfomSegue is called for locationsTableViewController");
+    [app.navigationBars[locationsTitle].buttons[@"Search"] tap];
+}
+
+- (void)testThatDatePickerDidAppear {
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    XCUIElement *dateTextFieldTextField = app.textFields[kDateTextField];
+    [dateTextFieldTextField tap];
+    XCUIElementQuery *datePickersQuery = app.datePickers;
+    [datePickersQuery.pickerWheels[@"Today"] swipeUp];
+    NSString *dateString = (NSString *)dateTextFieldTextField.value;
+    XCTAssertNotNil(dateString, "Error on date change. Please check datePickerValueDidChange");
+    [dateTextFieldTextField tap];
+}
 @end

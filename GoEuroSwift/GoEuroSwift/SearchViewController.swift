@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, ManagerDelegate, UITextFieldDelegate, LocationManagerDelegate {
     
     @IBOutlet weak var departureTextField: UITextField!
     @IBOutlet weak var arrivalTextField: UITextField!
@@ -16,27 +17,211 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var datePickerHeightConstraint:NSLayoutConstraint!
     @IBOutlet weak var datePicker:UIDatePicker!
     @IBOutlet weak var searchBtn:UIButton!
+    private (set)var currentLocations:[Location]?
+    var selectedLocation:Location?
 
+    //MARK: - Life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        Manager.sharedInstance.delegate = self
+        Manager.sharedInstance.locationManager.delegate = self
+        Manager.sharedInstance.locationManager.requestCurrentLocation()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        configureTextField(departureTextField)
+        configureTextField(arrivalTextField)
+        configureTextField(dateTextField)
+        navigationController?.navigationBarHidden = true
+        datePickerHeightConstraint.constant = 0.0
     }
-    */
+    
+    func configureTextField(textField:UITextField){
+        if textField == dateTextField {
+            textField.layer.borderColor = Manager.sharedInstance.geRoyalBlueColor.CGColor
+            textField.text = Manager.sharedInstance.dateFormatter.stringFromDate(NSDate())
+        }
+        textField.delegate = self
+        textField.layer.borderColor = Manager.sharedInstance.geAliceBlueColor.CGColor
+        textField.layer.borderWidth = 1.00
+        textField.layer.cornerRadius = 7.00
+        let paddingView = UIView(frame: CGRectMake(0, 0, 10, 42))
+        textField.leftView = paddingView
+        textField.leftViewMode = .Always;
+    }
+    
+    // MARK: - Prepare for segue.
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        guard let identifier = segue.identifier else {
+            return
+        }
+        switch identifier
+        {
+        case kSegue.LocationsTableViewControllerSegue:
+            guard currentLocations?.count > 0 else {
+                return
+            }
+            guard let locationsTableViewController = segue.destinationViewController as? LocationsTableViewController else {
+                return
+            }
+            locationsTableViewController.dataSource!.locations = currentLocations
+            
+        default:break
+        }
+    }
+    
+    @IBAction func unwindFromLocationsTableViewController(sender: UIStoryboardSegue) {
+        guard let locationsTableViewController = sender.sourceViewController as? LocationsTableViewController else {
+            return
+        }
+        
+        arrivalTextField.text = locationsTableViewController.selectedLocation?.fullname
+    }
+    
+    //MARK: - PerformSearchWithString
+    
+    func performSearchWithString(string:String) {
+        //TODO:- do stuffs
+        guard string.characters.count > 0 else {
+            //FIXME: Handle error
+            return
+        }
+        
+        dispatch_async(Manager.sharedInstance.concurrentQueue, {
+            let searchString = string.stringByTrimmingCharactersInSet(.whitespaceAndNewlineCharacterSet())
+            let query = Query(locale:"DE", term:searchString)
+            Manager.sharedInstance.fetchLocationsWithQuery(query)
+        })
+    }
+    
+    //MARK: - Present error
+    
+    func presentAlertViewWithError(errorMessage:String) {
+        let alertViewController = UIAlertController(title: "Location error", message: errorMessage, preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "OK", style: .Default) { (action) -> Void in
+            navigationController?.popViewControllerAnimated(true)
+        }
+        alertViewController.addAction(okAction)
+        presentViewController(alertViewController, animated: true, completion: nil)
+    }
+    
+    //MARK: - UIDatePicker changed value
+    
+    @IBAction func datePickerValueDidChange(sender: AnyObject) {
+        guard let datePicker = sender as? UIDatePicker else {
+            return
+        }
+        
+        dateTextField.text = Manager.sharedInstance.dateFormatter.stringFromDate(datePicker.date)
+    }
+    
+    
+    //MARK: - searchLocations 
+    
+    @IBAction func searchLocations(sender: AnyObject){
+        guard let strings = departureTextField.text else {
+            return
+        }
+        performSearchWithString(strings)
+    }
+    
+    //MARK: - ManagerDelegate 
+    
+    func managerDidFinishFetchingLocations(locations: [Location]) {
+        guard locations.count > 0 else {
+            return
+        }
+        currentLocations = locations
+        let location = locations[0]
+        dispatch_async(dispatch_get_main_queue()) { [weak self] in
+            guard let strongSelf = self else {
+                return
+            }
+            strongSelf.arrivalTextField.text = location.fullname
+        }
+    }
+    
+    func managerDidFailFetchingLocationsWithError(error: CommunicatorError) {
+        presentAlertViewWithError(error.description)
+    }
+    
+    //MARK: - LocationManagerDelegate
+    
+    func locationDidFindCurrentLocality(locality: String) {
+        departureTextField.text = locality
+        dispatch_async(Manager.sharedInstance.concurrentQueue, {
+            let query = Query(locale:"DE", term:locality)
+            Manager.sharedInstance.fetchLocationsWithQuery(query)
+        })
+    }
+    
+    func locationDidChangeAuthorizationStatus(authorizationStatus: CLAuthorizationStatus) {
+        var message:String?
+        
+        switch authorizationStatus {
+        case .NotDetermined:
+            message = "Can't determine authorization status"
+        case .Restricted:
+            message = "Authorization restricted"
+        case .Denied:
+            message = "Authorization denied"
+        default:break;
+        }
 
+        guard let errorMessage = message else {
+           return
+        }
+        
+        presentAlertViewWithError(errorMessage)
+    }
+    
+    func locationDidFailFindingCurrentLocalityWithError(error: LocationError) {
+        presentAlertViewWithError(error.description)
+    }
+    
+    //MARK: - UITextFieldDelegate
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        if string == "\n" {
+            textField.resignFirstResponder()
+            if textField == departureTextField {
+                performSearchWithString(departureTextField.text!)
+            }
+            return false
+        }
+        return true
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        if textField == dateTextField || textField == arrivalTextField {
+            textField.resignFirstResponder()
+            textField.tintColor = UIColor.clearColor()
+            
+            if textField == dateTextField {
+                switch datePickerHeightConstraint.constant {
+                case 0.00:
+                    datePickerHeightConstraint.constant = 139.00
+                case 139.00:
+                    datePickerHeightConstraint.constant = 0.00
+                default:break
+                }
+            } else if textField == arrivalTextField {
+                performSegueWithIdentifier(kSegue.LocationsTableViewControllerSegue, sender: self)
+            }
+        }
+    }
+
+    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+    }
+    
 }

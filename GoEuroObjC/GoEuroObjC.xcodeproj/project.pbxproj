@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C4C8CFC21BD5491400D22C3E /* responseFile.json in Resources */ = {isa = PBXBuildFile; fileRef = C4C8CFC11BD5491400D22C3E /* responseFile.json */; settings = {ASSET_TAGS = (); }; };
 		C4CDC8B51BCD10770061C168 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDC8B41BCD10770061C168 /* main.m */; };
 		C4CDC8B81BCD10780061C168 /* GEAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4CDC8B71BCD10780061C168 /* GEAppDelegate.m */; };
 		C4CDC8BE1BCD10780061C168 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4CDC8BC1BCD10780061C168 /* Main.storyboard */; };
@@ -60,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C4C8CFC11BD5491400D22C3E /* responseFile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = responseFile.json; sourceTree = "<group>"; };
 		C4CDC8B01BCD10770061C168 /* GoEuroObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoEuroObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CDC8B41BCD10770061C168 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C4CDC8B61BCD10780061C168 /* GEAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GEAppDelegate.h; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				C4FF7E901BCFE197006A44FD /* GEBerlin.gpx */,
+				C4C8CFC11BD5491400D22C3E /* responseFile.json */,
 				C4FF7E941BCFEAA0006A44FD /* Assets.xcassets */,
 				C4CDC9221BCD2EC20061C168 /* Myriad Pro */,
 				C4CDC8B41BCD10770061C168 /* main.m */,
@@ -404,6 +407,7 @@
 				C4CDC8C31BCD10780061C168 /* LaunchScreen.storyboard in Resources */,
 				C4FF7E911BCFE197006A44FD /* GEBerlin.gpx in Resources */,
 				C4CDC9231BCD2EC20061C168 /* Myriad Pro in Resources */,
+				C4C8CFC21BD5491400D22C3E /* responseFile.json in Resources */,
 				C4CDC8BE1BCD10780061C168 /* Main.storyboard in Resources */,
 				C4FF7E951BCFEAA0006A44FD /* Assets.xcassets in Resources */,
 			);

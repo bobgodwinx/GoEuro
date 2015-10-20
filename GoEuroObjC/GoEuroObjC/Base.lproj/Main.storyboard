@@ -58,6 +58,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Departure" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OHY-Y1-wLR">
                                 <rect key="frame" x="20" y="196" width="560" height="42"/>
                                 <animations/>
+                                <accessibility key="accessibilityConfiguration" identifier="Departure Text Field"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="WNd-8F-RwP"/>
                                 </constraints>
@@ -67,6 +68,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Arrival" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3zq-Sa-nd7">
                                 <rect key="frame" x="20" y="253" width="560" height="42"/>
                                 <animations/>
+                                <accessibility key="accessibilityConfiguration" identifier="Arrival Text Field"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="3aV-5t-eEV"/>
                                 </constraints>
@@ -90,6 +92,7 @@
                                 <rect key="frame" x="0.0" y="552" width="600" height="55"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.20392156859999999" green="0.42745098040000001" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Search Button"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="7Es-T1-5Gl"/>
                                 </constraints>
@@ -105,6 +108,7 @@
                                 <rect key="frame" x="20" y="310" width="560" height="42"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.86666666670000003" green="0.92941176469999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Date Text Field"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="FG8-rL-uDB"/>
                                 </constraints>
@@ -143,14 +147,14 @@
                         <outlet property="dateTextField" destination="Xty-Tp-dZS" id="QPK-b7-1YI"/>
                         <outlet property="departureTextField" destination="OHY-Y1-wLR" id="6ub-g6-vzN"/>
                         <outlet property="searchBtn" destination="1Hy-SK-cGp" id="S0A-DU-lsg"/>
-                        <segue destination="AbB-F7-4tg" kind="show" identifier="LocationsTableViewControllerSegue" id="dUj-rJ-TtN"/>
+                        <segue destination="AbB-F7-4tg" kind="show" identifier="LocationsTableViewControllerSegue" id="XqL-Ld-WvB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j2w-Md-NR3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1018" y="366"/>
         </scene>
-        <!--Locations Table View Controller-->
+        <!--Locations-->
         <scene sceneID="eOZ-sV-BcA">
             <objects>
                 <tableViewController id="AbB-F7-4tg" customClass="GELocationsTableViewController" sceneMemberID="viewController">
@@ -208,6 +212,7 @@
                             <outlet property="delegate" destination="vIq-dC-AT2" id="paA-wd-PWM"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Locations" id="gco-S7-8gm"/>
                     <connections>
                         <outlet property="dataSource" destination="Fs7-Ov-LKd" id="TgW-px-EtO"/>
                         <outlet property="delegate" destination="vIq-dC-AT2" id="Uie-zQ-6dg"/>
@@ -219,7 +224,7 @@
                 <customObject id="Fs7-Ov-LKd" customClass="GELocationsDataSource"/>
                 <exit id="soI-JK-kmF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1767" y="366"/>
+            <point key="canvasLocation" x="1740" y="366"/>
         </scene>
     </scenes>
     <resources>

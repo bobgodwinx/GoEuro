@@ -19,7 +19,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Smv-lk-xjF">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="spg-Rx-BQM" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainNavigatorViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="spg-Rx-BQM" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bkY-gT-NY6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -39,7 +39,7 @@
         <!--Search-->
         <scene sceneID="Xr2-gp-una">
             <objects>
-                <viewController id="Jw8-iz-6Lo" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jw8-iz-6Lo" customClass="SearchViewController" customModule="GoEuroSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FQo-N7-P45"/>
                         <viewControllerLayoutGuide type="bottom" id="CAm-FC-jL4"/>
@@ -82,6 +82,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="466430477.56427699">
                                     <!--2015-10-13 12:01:17 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="datePickerValueDidChange:" destination="Jw8-iz-6Lo" eventType="valueChanged" id="sLX-sI-FmF"/>
+                                </connections>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Hy-SK-cGp">
                                 <rect key="frame" x="0.0" y="552" width="600" height="55"/>
@@ -94,6 +97,9 @@
                                 <state key="normal" title="Search">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="searchLocations:" destination="Jw8-iz-6Lo" eventType="touchUpInside" id="HjT-E9-luG"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="15-10-2015" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xty-Tp-dZS">
                                 <rect key="frame" x="20" y="310" width="560" height="42"/>
@@ -130,23 +136,32 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="dtm-tt-vIk"/>
+                    <connections>
+                        <outlet property="arrivalTextField" destination="3zq-Sa-nd7" id="7Ks-9r-RqJ"/>
+                        <outlet property="datePicker" destination="ZJj-UA-YdP" id="0gH-ye-a7u"/>
+                        <outlet property="datePickerHeightConstraint" destination="HFd-ZC-xPc" id="h2z-Nt-vEX"/>
+                        <outlet property="dateTextField" destination="Xty-Tp-dZS" id="iJi-WX-zmB"/>
+                        <outlet property="departureTextField" destination="OHY-Y1-wLR" id="Wbx-Ni-eWo"/>
+                        <outlet property="searchBtn" destination="1Hy-SK-cGp" id="kM1-Ll-6wD"/>
+                        <segue destination="AbB-F7-4tg" kind="show" identifier="LocationsTableViewControllerSegue" id="hZg-IR-wd6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j2w-Md-NR3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1018" y="366"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Locations Table View Controller-->
         <scene sceneID="eOZ-sV-BcA">
             <objects>
-                <tableViewController id="AbB-F7-4tg" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="LocationsTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AbB-F7-4tg" customClass="LocationsTableViewController" customModule="GoEuroSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="lqq-x9-MOR">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="GELocationsCell" id="sEG-kI-dtH" customClass="GELocationsCell">
-                                <rect key="frame" x="0.0" y="49.5" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="LocationTableViewCell" id="sEG-kI-dtH" customClass="LocationTableViewCell" customModule="GoEuroSwift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sEG-kI-dtH" id="5eL-r6-mWV">
                                     <rect key="frame" x="0.0" y="0.0" width="561" height="43.5"/>
@@ -196,12 +211,12 @@
                     <connections>
                         <outlet property="dataSource" destination="Fs7-Ov-LKd" id="TgW-px-EtO"/>
                         <outlet property="delegate" destination="vIq-dC-AT2" id="Uie-zQ-6dg"/>
-                        <segue destination="soI-JK-kmF" kind="unwind" identifier="UnwindFromLocationsTableViewControllerSegue" unwindAction="unwindFromLocationsTableViewController:" id="aOA-0Y-82f"/>
+                        <segue destination="soI-JK-kmF" kind="unwind" identifier="UnwindFromLocationsTableViewController" unwindAction="unwindFromLocationsTableViewController:" id="2th-vR-u7U"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lh3-V6-SdH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="vIq-dC-AT2" customClass="GELocationsDelegate"/>
-                <customObject id="Fs7-Ov-LKd" customClass="GELocationsDataSource"/>
+                <customObject id="vIq-dC-AT2" customClass="LocationsTableViewDelegate" customModule="GoEuroSwift" customModuleProvider="target"/>
+                <customObject id="Fs7-Ov-LKd" customClass="LocationsTableViewDataSource" customModule="GoEuroSwift" customModuleProvider="target"/>
                 <exit id="soI-JK-kmF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1767" y="366"/>

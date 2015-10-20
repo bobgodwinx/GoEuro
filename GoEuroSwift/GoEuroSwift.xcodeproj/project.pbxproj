@@ -7,8 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C47BB3561BD641840004A0D4 /* CommunicatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8CF9D1BD14B5400D22C3E /* CommunicatorError.swift */; settings = {ASSET_TAGS = (); }; };
+		C47BB3581BD6444F0004A0D4 /* responseFile.json in Resources */ = {isa = PBXBuildFile; fileRef = C47BB3571BD6444F0004A0D4 /* responseFile.json */; settings = {ASSET_TAGS = (); }; };
 		C48D18A01BD138030030DB11 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48D189F1BD138030030DB11 /* SearchViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		C48D18A11BD138030030DB11 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48D189F1BD138030030DB11 /* SearchViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		C4C8CF981BD13D3100D22C3E /* Communicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8CF971BD13D3100D22C3E /* Communicator.swift */; settings = {ASSET_TAGS = (); }; };
+		C4C8CF9C1BD1405000D22C3E /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8CF9B1BD1405000D22C3E /* Identifiers.swift */; settings = {ASSET_TAGS = (); }; };
+		C4C8CF9E1BD14B5400D22C3E /* CommunicatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8CF9D1BD14B5400D22C3E /* CommunicatorError.swift */; settings = {ASSET_TAGS = (); }; };
+		C4C8CFA01BD1716E00D22C3E /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8CF9F1BD1716E00D22C3E /* Manager.swift */; settings = {ASSET_TAGS = (); }; };
+		C4C8CFA21BD173D300D22C3E /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8CFA11BD173D300D22C3E /* Query.swift */; settings = {ASSET_TAGS = (); }; };
+		C4C8CFA41BD174CE00D22C3E /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8CFA31BD174CE00D22C3E /* Builder.swift */; settings = {ASSET_TAGS = (); }; };
+		C4C8CFA61BD1926A00D22C3E /* ManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8CFA51BD1926A00D22C3E /* ManagerDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		C4C8CFA81BD192F700D22C3E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8CFA71BD192F700D22C3E /* Location.swift */; settings = {ASSET_TAGS = (); }; };
+		C4C8CFAC1BD50C6300D22C3E /* LocationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8CFAB1BD50C6300D22C3E /* LocationsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		C4C8CFAE1BD50CB500D22C3E /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8CFAD1BD50CB500D22C3E /* LocationTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		C4C8CFB01BD511AC00D22C3E /* LocationsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8CFAF1BD511AC00D22C3E /* LocationsTableViewDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		C4C8CFB21BD511DE00D22C3E /* LocationsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8CFB11BD511DE00D22C3E /* LocationsTableViewDataSource.swift */; settings = {ASSET_TAGS = (); }; };
+		C4C8CFB51BD52C5800D22C3E /* LocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8CFB41BD52C5800D22C3E /* LocationManagerDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		C4C8CFB71BD52C9400D22C3E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8CFB61BD52C9400D22C3E /* LocationManager.swift */; settings = {ASSET_TAGS = (); }; };
+		C4C8CFB91BD52CDC00D22C3E /* LocationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8CFB81BD52CDC00D22C3E /* LocationError.swift */; settings = {ASSET_TAGS = (); }; };
+		C4C8CFBB1BD5384900D22C3E /* Myriad Pro in Resources */ = {isa = PBXBuildFile; fileRef = C4C8CFBA1BD5384900D22C3E /* Myriad Pro */; settings = {ASSET_TAGS = (); }; };
 		C4CDC8F31BCD10E40061C168 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CDC8F21BCD10E40061C168 /* AppDelegate.swift */; };
 		C4CDC8F81BCD10E40061C168 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4CDC8F61BCD10E40061C168 /* Main.storyboard */; };
 		C4CDC8FA1BCD10E40061C168 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4CDC8F91BCD10E40061C168 /* Assets.xcassets */; };
@@ -36,7 +53,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C47BB3571BD6444F0004A0D4 /* responseFile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = responseFile.json; sourceTree = "<group>"; };
 		C48D189F1BD138030030DB11 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		C4C8CF971BD13D3100D22C3E /* Communicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Communicator.swift; sourceTree = "<group>"; };
+		C4C8CF9B1BD1405000D22C3E /* Identifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
+		C4C8CF9D1BD14B5400D22C3E /* CommunicatorError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunicatorError.swift; sourceTree = "<group>"; };
+		C4C8CF9F1BD1716E00D22C3E /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		C4C8CFA11BD173D300D22C3E /* Query.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
+		C4C8CFA31BD174CE00D22C3E /* Builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
+		C4C8CFA51BD1926A00D22C3E /* ManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagerDelegate.swift; sourceTree = "<group>"; };
+		C4C8CFA71BD192F700D22C3E /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		C4C8CFAB1BD50C6300D22C3E /* LocationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsTableViewController.swift; sourceTree = "<group>"; };
+		C4C8CFAD1BD50CB500D22C3E /* LocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		C4C8CFAF1BD511AC00D22C3E /* LocationsTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsTableViewDelegate.swift; sourceTree = "<group>"; };
+		C4C8CFB11BD511DE00D22C3E /* LocationsTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsTableViewDataSource.swift; sourceTree = "<group>"; };
+		C4C8CFB41BD52C5800D22C3E /* LocationManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManagerDelegate.swift; sourceTree = "<group>"; };
+		C4C8CFB61BD52C9400D22C3E /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		C4C8CFB81BD52CDC00D22C3E /* LocationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationError.swift; sourceTree = "<group>"; };
+		C4C8CFBA1BD5384900D22C3E /* Myriad Pro */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Myriad Pro"; sourceTree = "<group>"; };
 		C4CDC8EF1BCD10E40061C168 /* GoEuroSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoEuroSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CDC8F21BCD10E40061C168 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4CDC8F71BCD10E40061C168 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -97,6 +131,8 @@
 		C48D18991BD137080030DB11 /* Communicator */ = {
 			isa = PBXGroup;
 			children = (
+				C4C8CF971BD13D3100D22C3E /* Communicator.swift */,
+				C4C8CF9D1BD14B5400D22C3E /* CommunicatorError.swift */,
 			);
 			name = Communicator;
 			sourceTree = "<group>";
@@ -104,6 +140,8 @@
 		C48D189A1BD1371A0030DB11 /* Singleton */ = {
 			isa = PBXGroup;
 			children = (
+				C4C8CF9F1BD1716E00D22C3E /* Manager.swift */,
+				C4C8CFA51BD1926A00D22C3E /* ManagerDelegate.swift */,
 			);
 			name = Singleton;
 			sourceTree = "<group>";
@@ -112,6 +150,9 @@
 			isa = PBXGroup;
 			children = (
 				C48D189F1BD138030030DB11 /* SearchViewController.swift */,
+				C4C8CFAB1BD50C6300D22C3E /* LocationsTableViewController.swift */,
+				C4C8CFAF1BD511AC00D22C3E /* LocationsTableViewDelegate.swift */,
+				C4C8CFB11BD511DE00D22C3E /* LocationsTableViewDataSource.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -119,6 +160,7 @@
 		C48D189C1BD137630030DB11 /* Builders */ = {
 			isa = PBXGroup;
 			children = (
+				C4C8CFA31BD174CE00D22C3E /* Builder.swift */,
 			);
 			name = Builders;
 			sourceTree = "<group>";
@@ -126,6 +168,10 @@
 		C48D189D1BD137700030DB11 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C4C8CF9B1BD1405000D22C3E /* Identifiers.swift */,
+				C4C8CFA11BD173D300D22C3E /* Query.swift */,
+				C4C8CFA71BD192F700D22C3E /* Location.swift */,
+				C4C8CFAD1BD50CB500D22C3E /* LocationTableViewCell.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -136,6 +182,16 @@
 				C4CDC8FE1BCD10E40061C168 /* Info.plist */,
 			);
 			name = Plists;
+			sourceTree = "<group>";
+		};
+		C4C8CFB31BD52C0B00D22C3E /* Core Location */ = {
+			isa = PBXGroup;
+			children = (
+				C4C8CFB41BD52C5800D22C3E /* LocationManagerDelegate.swift */,
+				C4C8CFB61BD52C9400D22C3E /* LocationManager.swift */,
+				C4C8CFB81BD52CDC00D22C3E /* LocationError.swift */,
+			);
+			name = "Core Location";
 			sourceTree = "<group>";
 		};
 		C4CDC8E61BCD10E40061C168 = {
@@ -164,13 +220,16 @@
 				C48D18971BD136C20030DB11 /* AppDelegate */,
 				C48D18991BD137080030DB11 /* Communicator */,
 				C48D189A1BD1371A0030DB11 /* Singleton */,
+				C4C8CFB31BD52C0B00D22C3E /* Core Location */,
 				C48D189B1BD137300030DB11 /* ViewControllers */,
 				C48D189C1BD137630030DB11 /* Builders */,
 				C48D189D1BD137700030DB11 /* Models */,
 				C48D18981BD136D30030DB11 /* Storyboards */,
 				C48D189E1BD137860030DB11 /* Plists */,
 				C4CDC8F91BCD10E40061C168 /* Assets.xcassets */,
+				C4C8CFBA1BD5384900D22C3E /* Myriad Pro */,
 				C4FF7E921BCFE258006A44FD /* GEBerlin.gpx */,
+				C47BB3571BD6444F0004A0D4 /* responseFile.json */,
 			);
 			path = GoEuroSwift;
 			sourceTree = "<group>";
@@ -260,6 +319,7 @@
 				TargetAttributes = {
 					C4CDC8EE1BCD10E40061C168 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = FQSY778SP8;
 					};
 					C4CDC9021BCD10E50061C168 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -297,6 +357,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4CDC8FD1BCD10E40061C168 /* LaunchScreen.storyboard in Resources */,
+				C4C8CFBB1BD5384900D22C3E /* Myriad Pro in Resources */,
+				C47BB3581BD6444F0004A0D4 /* responseFile.json in Resources */,
 				C4FF7E931BCFE258006A44FD /* GEBerlin.gpx in Resources */,
 				C4CDC8FA1BCD10E40061C168 /* Assets.xcassets in Resources */,
 				C4CDC8F81BCD10E40061C168 /* Main.storyboard in Resources */,
@@ -324,8 +386,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4C8CFAC1BD50C6300D22C3E /* LocationsTableViewController.swift in Sources */,
+				C4C8CFA61BD1926A00D22C3E /* ManagerDelegate.swift in Sources */,
+				C4C8CF981BD13D3100D22C3E /* Communicator.swift in Sources */,
+				C4C8CFA81BD192F700D22C3E /* Location.swift in Sources */,
+				C4C8CFB91BD52CDC00D22C3E /* LocationError.swift in Sources */,
+				C4C8CFB71BD52C9400D22C3E /* LocationManager.swift in Sources */,
+				C4C8CFA21BD173D300D22C3E /* Query.swift in Sources */,
 				C48D18A01BD138030030DB11 /* SearchViewController.swift in Sources */,
+				C4C8CFAE1BD50CB500D22C3E /* LocationTableViewCell.swift in Sources */,
+				C4C8CF9E1BD14B5400D22C3E /* CommunicatorError.swift in Sources */,
+				C4C8CFB01BD511AC00D22C3E /* LocationsTableViewDelegate.swift in Sources */,
+				C4C8CFB21BD511DE00D22C3E /* LocationsTableViewDataSource.swift in Sources */,
+				C4C8CF9C1BD1405000D22C3E /* Identifiers.swift in Sources */,
+				C4C8CFB51BD52C5800D22C3E /* LocationManagerDelegate.swift in Sources */,
 				C4CDC8F31BCD10E40061C168 /* AppDelegate.swift in Sources */,
+				C4C8CFA01BD1716E00D22C3E /* Manager.swift in Sources */,
+				C4C8CFA41BD174CE00D22C3E /* Builder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,8 +410,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C48D18A11BD138030030DB11 /* SearchViewController.swift in Sources */,
 				C4CDC9081BCD10E50061C168 /* GoEuroSwiftTests.swift in Sources */,
+				C47BB3561BD641840004A0D4 /* CommunicatorError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,11 +545,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GoEuroSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bobgodwinx.GoEuroSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -480,11 +560,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = GoEuroSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bobgodwinx.GoEuroSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

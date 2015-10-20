@@ -18,13 +18,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //self.delegate.locationsTableViewController = self;
+    self.delegate.locationsTableViewController = self;
     [self.tableView reloadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.delegate.locationsTableViewController = self;
     self.navigationController.navigationBarHidden = NO;
 }
 

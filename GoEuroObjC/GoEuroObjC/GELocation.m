@@ -8,6 +8,13 @@
 
 #import "GELocation.h"
 
+@interface GELocation()
+
+@property (nonatomic, assign) BOOL inEurope;
+@property (nonatomic, assign) BOOL coreCountry;
+
+@end
+
 @implementation GELocation
 
 /**
