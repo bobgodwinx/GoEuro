@@ -8,7 +8,7 @@ The purpose of this is to show how you can solve a problem using the Objective-c
 
 ### Autocompleting travel search form
 
-On the form, the user is required to enter the start or if the location service is enabled then the app finds the current locality and end location and the date of their trip. The start and end location need to be automatically completed using a list of known locations that can be requested through a JSON API invocation. When displaying matches Date entry should be facilitated by a date entry widget. A "search" button is Tapping the "search" button should displays a "Search is not yet implemented" message to the user.
+The form requires the user to enter the departure or if the location service is enabled then the app finds the current locality and end location and the date of their trip. The arrival location need to be automatically completed using a list of known locations that can be requested through a JSON API. Date entry is facilitated by UIDatePicker. A "search" button is Tapping the "search" button should displays a "Search is not yet implemented" message to the user.
 
 ![search](search.png?raw=true)
 

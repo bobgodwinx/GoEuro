@@ -133,9 +133,8 @@ class SearchViewController: UIViewController, ManagerDelegate, UITextFieldDelega
         
         dateTextField.text = Manager.sharedInstance.dateFormatter.stringFromDate(datePicker.date)
     }
-    
-    
-    //MARK: - searchLocations 
+
+    //MARK: - searchLocations
     
     @IBAction func searchLocations(sender: AnyObject){
         UIAlertView.init(title: "GoEuro", message: "Search is not yet implemented", delegate: nil, cancelButtonTitle: "OK").show()
