@@ -36,6 +36,7 @@ class SearchViewController: UIViewController, ManagerDelegate, UITextFieldDelega
         configureTextField(dateTextField)
         navigationController?.navigationBarHidden = true
         datePickerHeightConstraint.constant = 0.0
+        configureSearchButton()
     }
     
     func configureTextField(textField:UITextField){
@@ -55,6 +56,18 @@ class SearchViewController: UIViewController, ManagerDelegate, UITextFieldDelega
             textField.rightView = UIImageView(image: UIImage(named: "Disclosure"))
             textField.rightViewMode = .Always
         }
+    }
+    
+    func configureSearchButton(){
+        guard departureTextField.text?.characters.count > 0 && arrivalTextField.text?.characters.count > 0 && dateTextField.text?.characters.count > 0 else {
+            searchBtn.backgroundColor = Manager.sharedInstance.geGrayColor
+            searchBtn.userInteractionEnabled = false
+            searchBtn.enabled = false
+            return
+        }
+        searchBtn.backgroundColor = Manager.sharedInstance.geRoyalBlueColor
+        searchBtn.userInteractionEnabled = true
+        searchBtn.enabled = true
     }
     
     // MARK: - Prepare for segue.
@@ -106,9 +119,7 @@ class SearchViewController: UIViewController, ManagerDelegate, UITextFieldDelega
     
     func presentAlertViewWithError(errorMessage:String) {
         let alertViewController = UIAlertController(title: "Location error", message: errorMessage, preferredStyle: .Alert)
-        let okAction = UIAlertAction(title: "OK", style: .Default) { (action) -> Void in
-            navigationController?.popViewControllerAnimated(true)
-        }
+        let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
         alertViewController.addAction(okAction)
         presentViewController(alertViewController, animated: true, completion: nil)
     }
@@ -127,10 +138,7 @@ class SearchViewController: UIViewController, ManagerDelegate, UITextFieldDelega
     //MARK: - searchLocations 
     
     @IBAction func searchLocations(sender: AnyObject){
-        guard let strings = departureTextField.text else {
-            return
-        }
-        performSearchWithString(strings)
+        UIAlertView.init(title: "GoEuro", message: "Search is not yet implemented", delegate: nil, cancelButtonTitle: "OK").show()
     }
     
     //MARK: - ManagerDelegate 
@@ -146,6 +154,7 @@ class SearchViewController: UIViewController, ManagerDelegate, UITextFieldDelega
                 return
             }
             strongSelf.arrivalTextField.text = location.fullname
+            strongSelf.configureSearchButton()
         }
     }
     
@@ -201,6 +210,7 @@ class SearchViewController: UIViewController, ManagerDelegate, UITextFieldDelega
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {
+        observeTextField(textField)
         if textField == dateTextField || textField == arrivalTextField {
             textField.resignFirstResponder()
             textField.tintColor = UIColor.clearColor()
@@ -223,8 +233,32 @@ class SearchViewController: UIViewController, ManagerDelegate, UITextFieldDelega
         textField.resignFirstResponder()
         return true
     }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UITextFieldTextDidChangeNotification, object: nil)
+    }
+    
+    //MARK: - UITextField observer
+    
+    func observeTextField(textField: UITextField) {
+        NSNotificationCenter.defaultCenter().addObserverForName(UITextFieldTextDidChangeNotification, object: nil, queue:NSOperationQueue.mainQueue()) { [weak self] (note:
+            NSNotification!) in
+            guard let strongSelf = self else {
+                return
+            }
+            /**
+             Update the search button based on textFields
+             */
+            strongSelf.configureSearchButton()
+        }
+    }
+    
+    //MARK: - TouchesBegan
 
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        /**
+         Force the keyboard to dismiss
+         */
         view.endEditing(true)
         super.touchesBegan(touches, withEvent: event)
     }

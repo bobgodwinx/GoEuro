@@ -1,29 +1,68 @@
-Mobile Developer - Test
-=======================
-The purpose of this test is to see how you approach a problem and what your solutions look like. The requirements for this test are simple and should be straightforward to grasp. When implementing a solution, please keep things simple as well. That said:
-### Implement an autocompleting travel search form
-On the form, the user is required to enter the start and end location and the date of their trip. The start and end location need to be automatically completed using a list of known locations that can be requested through a JSON API invocation. When displaying matches, they should be ordered by distance to the user's current location. Date entry should be facilitated by a date entry widget. A "search" button should be available when the form has been completely filled out. Tapping the "search" button should display a "Search is not yet implemented" message to the user.
+#GoEuro
+[![CocoaPods](https://img.shields.io/badge/Licence-MIT-brightgreen.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![CocoaPods](https://img.shields.io/badge/Platform-iOS-yellow.svg?style=flat-square)](https://en.wikipedia.org/wiki/IOS)
+[![CocoaPods](https://img.shields.io/badge/Requires-iOS%209+-blue.svg?style=flat-square)](http://www.apple.com/ios/whats-new/)
+[![CocoaPods](https://img.shields.io/badge/Made%20in-Berlin-red.svg?style=flat-square)](https://en.wikipedia.org/wiki/Berlin)
+
+The purpose of this is to show how you can solve a problem using the Objective-c on one case and the Swift on the later.
+
+### Autocompleting travel search form
+
+On the form, the user is required to enter the start or if the location service is enabled then the app finds the current locality and end location and the date of their trip. The start and end location need to be automatically completed using a list of known locations that can be requested through a JSON API invocation. When displaying matches Date entry should be facilitated by a date entry widget. A "search" button is Tapping the "search" button should displays a "Search is not yet implemented" message to the user.
+
+![search](search.png?raw=true)
+
+#### Topics 
+
+1. Concurrency 
+2. CoreLocation
+3. UITableViews
+4. UIViewController - Segues and unwind segues
+5. Networking - RestFul
+6. CoreData - later...
+
+These are just a few titles that will be highlighted in this project. Remember it is a sample project and nothing serious. It's aim is to show some best practices in the above mentioned topics
+
+####Concurrency
+
+Private queues in swift
+
+```swift
+
+    lazy var concurrentQueue:dispatch_queue_t = {
+        var __dispatchToken:dispatch_once_t = 0
+        var queue:dispatch_queue_t?
+        let qos = qos_class_t(QOS_CLASS_USER_INITIATED.rawValue)
+        let attr = dispatch_queue_attr_make_with_qos_class(DISPATCH_QUEUE_CONCURRENT, qos, 2);
+        dispatch_once(&__dispatchToken, {
+            queue = dispatch_queue_create("com.GoEuro.concurrent", attr);
+        });
+        return queue!
+        }()   
+```
+How to use a private queue
+
+```swift
+    func locationDidFindCurrentLocality(locality: String) {
+        departureTextField.text = locality
+        dispatch_async(Manager.sharedInstance.concurrentQueue, {
+            let query = Query(locale:"DE", term:locality)
+            Manager.sharedInstance.fetchLocationsWithQuery(query)
+        })
+    }
+```
+
+Return back to the main queue to update the UI
+
+```swift
+        dispatch_async(dispatch_get_main_queue()) { [weak self] in
+            guard let strongSelf = self else {
+                return
+            }
+            strongSelf.arrivalTextField.text = location.fullname
+            strongSelf.configureSearchButton()
+        }
+```
+To be continued... watch out for updates.
 
 
-![wireframe](wireframe.png?raw=true)
-
-
-
-The app should use the position API endpoint that can be found here: `http://api.goeuro.com/api/v2/position/suggest/{locale}/{term}`
-
-##### For example:
- http://api.goeuro.com/api/v2/position/suggest/de/hamburg
-
-Where `{term}` is the string that the user has entered so far.
-
-The endpoint always responds with a JSON object that has a results key. The value for that key is either null or an array of objects. Each object, among other keys, has a *name* and a *geo_positition* key. The *geo_position* key is an object with latitude and longitude fields.
-### Your solution
-Please implement your solution as an App that we can try out. For Android we need 4.4 compatibility or for iOS 8 compatibility. Also send us the source code to your solution. We use GitHub, so if you put your source code into a GitHub repository, it will make our life easy.  
-Please provide information for any third party library and tool you are using.
-Please use Objective-C as the main language for iOS test
-
-Bonus points for iOS :
-- Show us how you can adapt it to different screen sizes 
-- Can you use Objective-C and SWIFT together? show us a sample
-
-**A clean, well-animated, beautiful UI is very important. Please, let your imagination fly here (hint, use more than standard animations).**

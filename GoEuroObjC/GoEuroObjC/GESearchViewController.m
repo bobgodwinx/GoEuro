@@ -46,7 +46,7 @@
     [self configureTextField:self.departureTextField];
     [self configureTextField:self.dateTextField];
     self.datePickerHeightConstraint.constant = 0.0;
-    
+    [self configureSearchButton];
 }
 
 #pragma mark - Lazy initializer
@@ -86,6 +86,17 @@
     }
 }
 
+- (void)configureSearchButton {
+    if(self.arrivalTextField.text.length > 0 && self.departureTextField.text.length >0 && self.dateTextField.text.length > 0){
+        self.searchBtn.backgroundColor = self.manager.geRoyalBlueColor;
+        self.searchBtn.enabled = YES;
+        self.searchBtn.userInteractionEnabled = YES;
+    } else {
+        self.searchBtn.backgroundColor = self.manager.geGrayColor;
+        self.searchBtn.enabled = NO;
+        self.searchBtn.userInteractionEnabled = NO;
+    }
+}
 
 - (void)performSearchWithString:(NSString *)searchString {
     if(searchString.length > 0){
@@ -108,10 +119,7 @@
 
 - (void)presentAlertViewWithError:(NSError *)error {
     UIAlertController *alertViewController = [UIAlertController alertControllerWithTitle:@"Location Error" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
-    __weak typeof(self)weakSelf = self;
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [weakSelf.navigationController popViewControllerAnimated:YES];
-    }];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
     [alertViewController addAction:okAction];
     
     [self presentViewController:alertViewController animated:YES completion:nil];
@@ -164,6 +172,7 @@
 
 - (void)locationDidFindCurrentLocality:(NSString *)locality {
     self.departureTextField.text = locality;
+    [self configureSearchButton];
     if (locality) {
         [self performSearchWithString:locality];
     }
@@ -180,7 +189,6 @@
 
 #pragma mark - Unwind segue
 
-
 - (IBAction)unwindFromLocationsTableViewController:(UIStoryboardSegue *)sender {
     if([sender.identifier isEqualToString:kUnwindFromLocationsTableViewController]){
         GELocationsTableViewController *locationsTableViewController = (GELocationsTableViewController *)sender.sourceViewController;
@@ -192,13 +200,10 @@
 #pragma mark - Search Location
 
 - (IBAction)searchLocations:(id)sender {
-    if(self.departureTextField.text.length > 0){
-        [self performSearchWithString:self.departureTextField.text];
-    }
+    [[[UIAlertView alloc]initWithTitle:@"GoEuro" message:@"Search is not yet implemented" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil] show];
 }
 
 #pragma mark - UITextFieldDelegate
-
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     if([string  isEqual:@"\n"]){
@@ -212,6 +217,7 @@
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
+    [self observeTextField:textField];
     if (textField == self.dateTextField || textField == self.arrivalTextField) {
         [textField resignFirstResponder];
         textField.tintColor = [UIColor clearColor];
@@ -230,6 +236,21 @@
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
     [textField resignFirstResponder];
     return YES;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UITextFieldTextDidChangeNotification object:nil];
+}
+
+
+#pragma mark - observeTextField
+
+- (void)observeTextField:(UITextField *)textField {
+    __weak typeof(self)weakSelf = self;
+    [[NSNotificationCenter defaultCenter] addObserverForName:UITextFieldTextDidChangeNotification object:nil queue:NSOperationQueuePriorityNormal usingBlock: ^(NSNotification *note) {
+        __strong typeof(weakSelf)strongSelf = weakSelf;
+        [strongSelf configureSearchButton];
+    }];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
