@@ -8,6 +8,7 @@
 
 import XCTest
 import CoreLocation
+
 @testable import GoEuroSwift
 
 class GoEuroSwiftTests: XCTestCase {

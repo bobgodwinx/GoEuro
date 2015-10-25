@@ -17,4 +17,8 @@ protocol ManagerDelegate:class {
      A method that notifies the controller that locations request failed
      */
     func managerDidFailFetchingLocationsWithError(error: CommunicatorError)
+    /**
+    shows how to add property in a protocol
+     */
+    var protocolProperty:String? {get set}
 }

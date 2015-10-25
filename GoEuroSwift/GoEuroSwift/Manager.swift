@@ -64,7 +64,10 @@ class Manager {
             
             let locations = strongSelf.builder.buildServerResponse(response)
             strongSelf.delegate?.managerDidFinishFetchingLocations(locations)
-            
+            /**
+             getting a protocolProperty
+             */
+            print(strongSelf.delegate?.protocolProperty)
         }, failure: { [weak self] (error) in
             guard let strongSelf = self else {
                 return

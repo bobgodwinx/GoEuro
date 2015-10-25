@@ -19,6 +19,10 @@ class SearchViewController: UIViewController, ManagerDelegate, UITextFieldDelega
     @IBOutlet weak var searchBtn:UIButton!
     private (set)var currentLocations:[Location]?
     var selectedLocation:Location?
+    /**
+     conforming to protocol property in managerDelegate
+     */
+    var protocolProperty:String?
 
     //MARK: - Life cycle
     
@@ -27,6 +31,10 @@ class SearchViewController: UIViewController, ManagerDelegate, UITextFieldDelega
         Manager.sharedInstance.delegate = self
         Manager.sharedInstance.locationManager.delegate = self
         Manager.sharedInstance.locationManager.requestCurrentLocation()
+        /**
+         setting a protocolProperty
+         */
+        protocolProperty = "hello I am a protocolProperty"
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -43,6 +51,10 @@ class SearchViewController: UIViewController, ManagerDelegate, UITextFieldDelega
         if textField == dateTextField {
             textField.layer.borderColor = Manager.sharedInstance.geRoyalBlueColor.CGColor
             textField.text = Manager.sharedInstance.dateFormatter.stringFromDate(NSDate())
+            /**
+             Testing associated objects
+             */
+            textField.cellIndexPath = NSIndexPath(forRow: 0, inSection: 34)
         }
         textField.delegate = self
         textField.layer.borderColor = Manager.sharedInstance.geAliceBlueColor.CGColor
@@ -215,6 +227,7 @@ class SearchViewController: UIViewController, ManagerDelegate, UITextFieldDelega
             textField.tintColor = UIColor.clearColor()
             
             if textField == dateTextField {
+                print(textField.cellIndexPath)
                 switch datePickerHeightConstraint.constant {
                 case 0.00:
                     datePickerHeightConstraint.constant = 139.00

@@ -17,4 +17,6 @@
  */
 - (void)managerDidFailFetchingLocationsWithError:(NSError *)error;
 
+//@property (nonatomic) NSString *protocolProperty;
+
 @end
